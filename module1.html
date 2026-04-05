@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 — Kinematics of Machine Tools</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-brand">⚙️ Production Technology</div>
+  <div class="topnav-links">
+    <a href="index.html">Home</a>
+    <a href="module1.html" class="active">Module 1</a>
+    <a href="module2.html">Module 2</a>
+    <a href="module3.html">Module 3</a>
+    <a href="module4.html">Module 4</a>
+    <a href="pyq.html">PYQ</a>
+  </div>
+  <button class="theme-btn" id="theme-btn">🌙</button>
+</nav>
+
+<div class="module-layout">
+<nav class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Module 1</div>
+    <a href="#intro">Introduction</a>
+    <a href="#motions">Types of Motions</a>
+    <a href="#speed-feed">Speed & Feed Selection</a>
+    <a href="#progression">Progression Ratio</a>
+    <a href="#preferred-numbers">Preferred Numbers</a>
+    <a href="#structural-diagram">Structural Diagram</a>
+    <a href="#ray-diagram">Ray Diagram</a>
+    <a href="#gearbox-design">Gear Box Design</a>
+    <a href="#stepped-stepless">Stepped vs Stepless</a>
+    <a href="#mechanisms">Speed Mechanisms</a>
+    <a href="#solved">Solved Problems</a>
+    <a href="#pyq">PYQ Questions</a>
+  </div>
+</nav>
+
+<main class="content">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <div class="page-header">
+    <div class="module-badge mod1-badge">🔧 Module 1</div>
+    <h1>Kinematics of Machine Tools</h1>
+    <p>Speed & feed selection, gear box design, ray diagrams, structural diagrams, and speed mechanisms in machine tools. (Prof. Pramod — PRK)</p>
+  </div>
+
+  <!-- ── INTRO ── -->
+  <section class="section" id="intro">
+    <h2 class="section-title">🔍 Introduction</h2>
+    <div class="subsection">
+      <p>Kinematics of machine tools deals with the study of <strong>motion (without considering forces)</strong> in machines used for manufacturing operations. It focuses on how cutting tools and workpieces move relative to each other to produce the desired shape, size, and surface finish.</p>
+      <div class="callout callout-info">
+        <strong>Key Concept</strong>
+        Material removal occurs due to relative motion between the cutting tool and the workpiece.
+      </div>
+      <h4>Examples of Relative Motion:</h4>
+      <ul>
+        <li>In a <strong>lathe</strong> — the workpiece rotates and the tool feeds linearly.</li>
+        <li>In a <strong>milling machine</strong> — the cutter rotates and the workpiece feeds.</li>
+        <li>In a <strong>drilling machine</strong> — the drill rotates and feeds into the workpiece.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── TYPES OF MOTIONS ── -->
+  <section class="section" id="motions">
+    <h2 class="section-title">⚙️ Types of Motions in Machine Tools</h2>
+    <div class="subsection">
+      <h3>1. Primary (Cutting) Motion</h3>
+      <ul>
+        <li>Responsible for the cutting action.</li>
+        <li>Usually rotary (lathe, milling, drilling) or linear (shaping, planing).</li>
+        <li>Provides the cutting speed.</li>
+      </ul>
+      <h3>2. Feed Motion</h3>
+      <ul>
+        <li>Moves the tool/work gradually for continuous cutting.</li>
+        <li>Slower than primary motion.</li>
+        <li>Determines the depth of cut and chip thickness.</li>
+      </ul>
+      <h3>3. Auxiliary Motions</h3>
+      <ul>
+        <li>Tool positioning, clamping, return stroke (in shaping)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SPEED & FEED SELECTION ── -->
+  <section class="section" id="speed-feed">
+    <h2 class="section-title">🎯 Speed & Feed Selection</h2>
+    <div class="subsection">
+      <h3>Major Factors Affecting Speed Selection</h3>
+      <ul>
+        <li><strong>Work material:</strong> Harder materials require lower cutting speeds.</li>
+        <li><strong>Tool material:</strong> HSS, carbide, ceramic tools allow different speeds.</li>
+        <li><strong>Depth of cut:</strong> Heavier cuts require reduced speed.</li>
+        <li><strong>Feed rate:</strong> Higher feeds reduce permissible speed.</li>
+        <li><strong>Type of operation:</strong> Rough vs. finish machining.</li>
+        <li><strong>Coolant use:</strong> Coolant allows higher speeds.</li>
+        <li><strong>Machine rigidity:</strong> Affects maximum permissible speed.</li>
+      </ul>
+      <h3>Cutting Speed Formula</h3>
+      <div class="formula-box">
+        V = (π × D × N) / 1000  [m/min]
+        where D = diameter (mm), N = speed (rpm)
+      </div>
+      <h3>Major Factors Affecting Feed Selection</h3>
+      <ul>
+        <li>Surface finish requirement (finer finish → lower feed)</li>
+        <li>Workpiece material strength</li>
+        <li>Tool geometry (nose radius, rake angle)</li>
+        <li>Type of operation (roughing vs. finishing)</li>
+        <li>Rigidity of work and machine</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PROGRESSION RATIO ── -->
+  <section class="section" id="progression">
+    <h2 class="section-title">📐 Progression Ratio (Step Ratio)</h2>
+    <div class="subsection">
+      <p>When spindle speeds are arranged in <strong>Geometric Progression (GP)</strong>, the ratio between two adjacent speeds is the <strong>progression ratio (φ)</strong>.</p>
+      <div class="formula-box">
+        φ = N₂/N₁ = N₃/N₂ = ... = (Nmax/Nmin)^(1/(n−1))
+
+        where:
+          φ = progression ratio
+          n = number of speed steps
+          Nmin = minimum speed (rpm)
+          Nmax = maximum speed (rpm)
+
+        Permissible deviation = ±10%
+      </div>
+      <h3>Why Geometric Progression?</h3>
+      <ul>
+        <li>Speed loss is <strong>minimum</strong> (Speed loss = Desired optimum speed − Available speed)</li>
+        <li>Minimum number of gears required.</li>
+        <li>More even range of spindle speeds at each step.</li>
+        <li>Very compact layout.</li>
+        <li>Productivity (surface area removed/unit time) is constant across the speed range.</li>
+        <li>Spindle speeds can be easily selected from preferred numbers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PREFERRED NUMBERS ── -->
+  <section class="section" id="preferred-numbers">
+    <h2 class="section-title">🔢 Preferred Numbers</h2>
+    <div class="subsection">
+      <p>Preferred numbers are conventionally rounded-off values derived from geometric series. Five basic series:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Series</th><th>Step Ratio (φ)</th><th>Use</th></tr></thead>
+          <tbody>
+            <tr><td>R 5</td><td>1.58</td><td>Coarse series</td></tr>
+            <tr><td>R 10</td><td>1.26</td><td>General use</td></tr>
+            <tr><td>R 20</td><td>1.12</td><td>Machine tool gear boxes</td></tr>
+            <tr><td>R 40</td><td>1.06</td><td>Fine gear boxes</td></tr>
+            <tr><td>R 80</td><td>1.03</td><td>Very fine series</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-tip">
+        <strong>Exam Tip</strong>
+        R20 and R40 series are most commonly used in the design of multi-speed gear boxes.
+      </div>
+      <h3>Calculation of Non-Standard Speeds</h3>
+      <div class="formula-box">
+        N₁ = Nmin
+        N₂ = Nmin × φ¹
+        N₃ = Nmin × φ²
+        ...
+        Nₙ = Nmin × φ^(n-1)
+
+        Number of speeds to skip = ln(φ_calculated) / ln(φ_standard)
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRUCTURAL DIAGRAM ── -->
+  <section class="section" id="structural-diagram">
+    <h2 class="section-title">🏗️ Structural Diagram</h2>
+    <div class="subsection">
+      <p>A structural diagram is a <strong>kinematic layout</strong> that shows the arrangement of gears in a gear box — shafts, gear pairs, and the number of speed steps at each stage.</p>
+      <h3>Structural Formula for n-speed Gear Box</h3>
+      <p>General form: <strong>P₁(X₁) × P₂(X₂) × P₃(X₃)</strong></p>
+      <ul>
+        <li>P = number of gear pairs in that stage</li>
+        <li>X = characteristic (number of speeds before that stage)</li>
+      </ul>
+      <h3>Possible Arrangements</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>No. of Speeds</th><th>Structural Formulas</th></tr></thead>
+          <tbody>
+            <tr><td>6 speeds</td><td>3(1)×2(3) &nbsp;|&nbsp; 2(1)×3(2)</td></tr>
+            <tr><td>8 speeds</td><td>2(1)×2(2)×2(4) &nbsp;|&nbsp; 4(1)×2(4)</td></tr>
+            <tr><td>9 speeds</td><td>3(1)×3(3)</td></tr>
+            <tr><td>12 speeds</td><td>3(1)×2(3)×2(6) &nbsp;|&nbsp; 2(1)×3(2)×2(6) &nbsp;|&nbsp; 2(1)×2(2)×3(4)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Rules for Gear Box Design</h3>
+      <ul>
+        <li>Transmission ratio: <strong>1/4 ≤ i ≤ 2</strong></li>
+        <li>Speed ratio at any stage must not exceed 8: <strong>φ^P ≤ 8</strong></li>
+        <li>In all stages except the first: <strong>X ≥ P_prev</strong></li>
+        <li>Sum of teeth of mating gears must be same for same module in a sliding set.</li>
+        <li>Minimum number of teeth on smallest gear ≥ 17.</li>
+      </ul>
+      <div class="diagram-wrap">
+        <svg width="520" height="180" viewBox="0 0 520 180" xmlns="http://www.w3.org/2000/svg">
+          <!-- Structural diagram for 12-speed (3x2x2) -->
+          <style>
+            .sd { font-family: sans-serif; font-size: 12px; }
+            .shaft { stroke: #1971c2; stroke-width: 2; }
+            .gear { stroke: #495057; stroke-width: 1.5; fill: #e9ecef; }
+            [data-theme="dark"] .gear { fill: #373a40; }
+          </style>
+          <!-- Shaft lines -->
+          <line x1="50" y1="40" x2="50" y2="160" class="shaft"/>
+          <line x1="180" y1="40" x2="180" y2="160" class="shaft"/>
+          <line x1="320" y1="40" x2="320" y2="160" class="shaft"/>
+          <line x1="460" y1="40" x2="460" y2="160" class="shaft"/>
+          <!-- Shaft labels -->
+          <text x="50" y="25" text-anchor="middle" class="sd" fill="#1971c2">Input</text>
+          <text x="180" y="25" text-anchor="middle" class="sd">Shaft II</text>
+          <text x="320" y="25" text-anchor="middle" class="sd">Shaft III</text>
+          <text x="460" y="25" text-anchor="middle" class="sd" fill="#1971c2">Output</text>
+          <!-- Stage 1: 3 pairs (shaft I to II) -->
+          <rect x="70" y="55" width="90" height="16" rx="3" class="gear"/>
+          <text x="115" y="67" text-anchor="middle" class="sd" fill="#495057">Pair 1 (i₁)</text>
+          <rect x="70" y="90" width="90" height="16" rx="3" class="gear"/>
+          <text x="115" y="102" text-anchor="middle" class="sd" fill="#495057">Pair 2 (i₂)</text>
+          <rect x="70" y="125" width="90" height="16" rx="3" class="gear"/>
+          <text x="115" y="137" text-anchor="middle" class="sd" fill="#495057">Pair 3 (i₃)</text>
+          <text x="115" y="170" text-anchor="middle" class="sd" fill="#2f9e44">Stage 1: 3 speeds</text>
+          <!-- Stage 2: 2 pairs (shaft II to III) -->
+          <rect x="205" y="68" width="90" height="16" rx="3" class="gear"/>
+          <text x="250" y="80" text-anchor="middle" class="sd" fill="#495057">Pair 4 (i₄)</text>
+          <rect x="205" y="110" width="90" height="16" rx="3" class="gear"/>
+          <text x="250" y="122" text-anchor="middle" class="sd" fill="#495057">Pair 5 (i₅)</text>
+          <text x="250" y="170" text-anchor="middle" class="sd" fill="#2f9e44">Stage 2: ×2</text>
+          <!-- Stage 3: 2 pairs (shaft III to IV) -->
+          <rect x="345" y="68" width="90" height="16" rx="3" class="gear"/>
+          <text x="390" y="80" text-anchor="middle" class="sd" fill="#495057">Pair 6 (i₆)</text>
+          <rect x="345" y="110" width="90" height="16" rx="3" class="gear"/>
+          <text x="390" y="122" text-anchor="middle" class="sd" fill="#495057">Pair 7 (i₇)</text>
+          <text x="390" y="170" text-anchor="middle" class="sd" fill="#2f9e44">Stage 3: ×2</text>
+        </svg>
+        <figcaption>Structural diagram for a 12-speed gear box using 3(1)×2(3)×2(6) arrangement</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RAY DIAGRAM ── -->
+  <section class="section" id="ray-diagram">
+    <h2 class="section-title">📊 Ray Diagram</h2>
+    <div class="subsection">
+      <p>A ray diagram (speed chart) is a <strong>graphical representation of the drive arrangement</strong> that determines the specific values of all transmission ratios and speeds of all shafts in the drive.</p>
+      <h3>Difference: Structural Diagram vs Ray Diagram</h3>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead><tr><th>Structural Diagram</th><th>Ray Diagram</th></tr></thead>
+          <tbody>
+            <tr><td>Kinematic layout showing shaft and gear arrangement</td><td>Graphical representation of drive arrangement showing speed values</td></tr>
+            <tr><td>Shows how many speeds at each stage</td><td>Shows exact speed values on each shaft</td></tr>
+            <tr><td>Does not show actual speed values</td><td>Speed scale is logarithmic (equal intervals for GP)</td></tr>
+            <tr><td>Used for initial design layout</td><td>Used to determine and verify transmission ratios</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>How to Draw a Ray Diagram</h3>
+      <ol>
+        <li>Draw vertical lines for each shaft (input to output).</li>
+        <li>Mark speed values on a logarithmic scale (horizontal lines).</li>
+        <li>Input shaft has one speed; each successive shaft shows speed steps.</li>
+        <li>Connect speeds with lines representing gear pairs (rays).</li>
+        <li>Slope of ray = transmission ratio of that gear pair.</li>
+        <li>Diverging rays = speed increase; converging rays = speed decrease.</li>
+      </ol>
+      <div class="diagram-wrap">
+        <!-- Ray Diagram for 12-speed gear box: 3x2x2 arrangement -->
+        <svg width="500" height="340" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+          <style>.rd { font-family: sans-serif; font-size: 10px; }</style>
+          <!-- Speed grid lines (log scale: 12 speeds) -->
+          <!-- Y positions for speeds: 100,112,125,140,160,180,200,224,250,280,315,355 rpm -->
+          <!-- Map them: y=300 (100rpm) to y=20 (355rpm), 12 lines -->
+          <line x1="70" y1="20" x2="430" y2="20" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="47" x2="430" y2="47" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="70" x2="430" y2="70" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="93" x2="430" y2="93" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="116" x2="430" y2="116" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="140" x2="430" y2="140" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="163" x2="430" y2="163" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="186" x2="430" y2="186" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="209" x2="430" y2="209" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="233" x2="430" y2="233" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="256" x2="430" y2="256" stroke="#dee2e6" stroke-width="0.5"/>
+          <line x1="70" y1="280" x2="430" y2="280" stroke="#dee2e6" stroke-width="0.5"/>
+          <!-- Speed labels -->
+          <text x="65" y="24" text-anchor="end" class="rd" fill="#6c757d">355</text>
+          <text x="65" y="51" text-anchor="end" class="rd" fill="#6c757d">315</text>
+          <text x="65" y="74" text-anchor="end" class="rd" fill="#6c757d">280</text>
+          <text x="65" y="97" text-anchor="end" class="rd" fill="#6c757d">250</text>
+          <text x="65" y="120" text-anchor="end" class="rd" fill="#6c757d">224</text>
+          <text x="65" y="144" text-anchor="end" class="rd" fill="#6c757d">200</text>
+          <text x="65" y="167" text-anchor="end" class="rd" fill="#6c757d">180</text>
+          <text x="65" y="190" text-anchor="end" class="rd" fill="#6c757d">160</text>
+          <text x="65" y="213" text-anchor="end" class="rd" fill="#6c757d">140</text>
+          <text x="65" y="237" text-anchor="end" class="rd" fill="#6c757d">125</text>
+          <text x="65" y="260" text-anchor="end" class="rd" fill="#6c757d">112</text>
+          <text x="65" y="284" text-anchor="end" class="rd" fill="#6c757d">100</text>
+          <!-- Shaft vertical lines -->
+          <line x1="110" y1="10" x2="110" y2="295" stroke="#1971c2" stroke-width="2"/>
+          <line x1="210" y1="10" x2="210" y2="295" stroke="#495057" stroke-width="2"/>
+          <line x1="320" y1="10" x2="320" y2="295" stroke="#495057" stroke-width="2"/>
+          <line x1="420" y1="10" x2="420" y2="295" stroke="#1971c2" stroke-width="2"/>
+          <!-- Shaft labels -->
+          <text x="110" y="308" text-anchor="middle" class="rd" fill="#1971c2" font-weight="bold">I (Input)</text>
+          <text x="210" y="308" text-anchor="middle" class="rd">II</text>
+          <text x="320" y="308" text-anchor="middle" class="rd">III</text>
+          <text x="420" y="308" text-anchor="middle" class="rd" fill="#1971c2" font-weight="bold">IV (Output)</text>
+          <!-- Input speed at shaft I = 1500 rpm approx: use y=163 as input -->
+          <circle cx="110" cy="163" r="4" fill="#1971c2"/>
+          <!-- Stage 1: 3 rays from shaft I to II  -->
+          <!-- i1: goes to speed 355 (y=20) -->
+          <line x1="110" y1="163" x2="210" y2="20" stroke="#e67700" stroke-width="1.5"/>
+          <!-- i2: goes to speed 180 (y=163) same speed -->
+          <line x1="110" y1="163" x2="210" y2="163" stroke="#e67700" stroke-width="1.5"/>
+          <!-- i3: goes to speed 100 (y=280) -->
+          <line x1="110" y1="163" x2="210" y2="280" stroke="#e67700" stroke-width="1.5"/>
+          <circle cx="210" cy="20" r="3" fill="#e67700"/>
+          <circle cx="210" cy="163" r="3" fill="#e67700"/>
+          <circle cx="210" cy="280" r="3" fill="#e67700"/>
+          <!-- Stage 2: 2 rays from each of 3 shaft II speeds to shaft III -->
+          <line x1="210" y1="20" x2="320" y2="20" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="210" y1="20" x2="320" y2="70" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="210" y1="163" x2="320" y2="163" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="210" y1="163" x2="320" y2="209" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="210" y1="280" x2="320" y2="256" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="210" y1="280" x2="320" y2="280" stroke="#2f9e44" stroke-width="1.5"/>
+          <!-- Stage 3: 2 rays from each of 6 shaft III speeds to shaft IV -->
+          <line x1="320" y1="20" x2="420" y2="20" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="20" x2="420" y2="47" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="70" x2="420" y2="70" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="70" x2="420" y2="93" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="163" x2="420" y2="163" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="163" x2="420" y2="186" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="209" x2="420" y2="209" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="209" x2="420" y2="233" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="256" x2="420" y2="256" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="256" x2="420" y2="280" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="320" y1="280" x2="420" y2="280" stroke="#7048e8" stroke-width="1.5"/>
+          <!-- Output shaft dots -->
+          <circle cx="420" cy="20" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="47" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="70" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="93" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="116" r="3" fill="#adb5bd"/>
+          <circle cx="420" cy="140" r="3" fill="#adb5bd"/>
+          <circle cx="420" cy="163" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="186" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="209" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="233" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="256" r="3" fill="#c92a2a"/>
+          <circle cx="420" cy="280" r="3" fill="#c92a2a"/>
+          <!-- Y-axis label -->
+          <text x="30" y="155" text-anchor="middle" class="rd" fill="#6c757d" transform="rotate(-90,30,155)">Speed (rpm)</text>
+        </svg>
+        <figcaption>Ray diagram for a 12-speed gear box (3×2×2 arrangement) showing speed steps on logarithmic scale. Output speeds: 100–355 rpm (R20 series, φ=1.12)</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GEAR BOX DESIGN ── -->
+  <section class="section" id="gearbox-design">
+    <h2 class="section-title">⚙️ Gear Box Design</h2>
+    <div class="subsection">
+      <h3>Requirements of a Speed Gear Box</h3>
+      <ul>
+        <li>Must provide the designed series of spindle speeds.</li>
+        <li>Must transmit the required amount of power to the spindle.</li>
+        <li>Must provide smooth, silent operation of the transmission.</li>
+        <li>Simple construction and easily accessible for maintenance.</li>
+      </ul>
+      <h3>Methods of Changing Speed</h3>
+      <ul>
+        <li><strong>Sliding mesh gear box</strong> — spur gears slid along splines to mesh with different gears.</li>
+        <li><strong>Constant mesh gear box</strong> — helical gears always in mesh; clutches select speed.</li>
+        <li><strong>Synchromesh gear box</strong> — synchronizer rings allow smooth engagement.</li>
+        <li><strong>Planetary gear box</strong> — compact, high torque applications.</li>
+      </ul>
+      <div class="callout callout-tip">
+        <strong>Key Rule</strong>
+        In a sliding mesh gear box, the sum of teeth of mating gears must be equal in the same stage (same module) to allow sliding. Helical gears are used in constant mesh type for quieter, smoother operation.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STEPPED vs STEPLESS ── -->
+  <section class="section" id="stepped-stepless">
+    <h2 class="section-title">🔄 Stepped vs. Stepless Speed Regulation</h2>
+    <div class="subsection">
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead><tr><th>Feature</th><th>Stepped Regulation</th><th>Stepless Regulation</th></tr></thead>
+          <tbody>
+            <tr><td>Speed variation</td><td>Discrete steps (finite no. of speeds)</td><td>Continuous, infinitely variable</td></tr>
+            <tr><td>Mechanism</td><td>Gear boxes, step pulleys</td><td>CVT, PIV, hydraulic/electric drives</td></tr>
+            <tr><td>Cost</td><td>Lower</td><td>Higher</td></tr>
+            <tr><td>Efficiency</td><td>High (positive drive)</td><td>Slightly lower</td></tr>
+            <tr><td>Accuracy</td><td>Cannot get exact desired speed</td><td>Exact desired speed possible</td></tr>
+            <tr><td>Applications</td><td>Most general purpose machines</td><td>CNC machines, precision ops</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPEED MECHANISMS ── -->
+  <section class="section" id="mechanisms">
+    <h2 class="section-title">🔩 Speed & Feed Mechanisms in Machines</h2>
+    <div class="subsection">
+      <h3>Speed Mechanism in Lathe</h3>
+      <p>In a lathe, the speed mechanism transmits power from the motor to the spindle through a series of gear stages. Common arrangement:</p>
+      <ul>
+        <li><strong>Back gear arrangement:</strong> Provides extra low-speed range for heavy cuts (threading, boring).</li>
+        <li>Motor → V-belt → Countershaft → Headstock gear box → Spindle.</li>
+        <li>Spindle speeds selected by shifting gear clusters on the headstock.</li>
+        <li>Norton gear box (tumbler gear) is used for feed mechanism in lathe to select different thread pitches and feeds.</li>
+      </ul>
+      <h3>Speed Mechanism in Milling Machine</h3>
+      <ul>
+        <li>Motor drives the spindle through a multi-speed gear box (usually 18 or more speeds).</li>
+        <li>Feed is provided by a separate feed gear box (independent from speed).</li>
+        <li>Both horizontal and vertical spindles can be driven in a universal milling machine.</li>
+      </ul>
+      <h3>Feed & Speed Mechanism in Drilling Machine</h3>
+      <ul>
+        <li>Spindle speed: achieved through step pulleys or gear box.</li>
+        <li>Feed: by hand or through automatic feed mechanism — lead screw or rack and pinion.</li>
+        <li>Sensitive drill press uses hand feed; upright drill press uses gear-driven automatic feed.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SOLVED PROBLEMS ── -->
+  <section class="section" id="solved">
+    <h2 class="section-title">✏️ Solved Problems</h2>
+
+    <div class="solved-problem">
+      <div class="solved-problem-head">Problem 1 — Find progression ratio and spindle speeds for a 12-speed gear box (100 to 355 rpm)</div>
+      <div class="solved-problem-body">
+        <p><strong>Given:</strong> n = 12, N<sub>min</sub> = 100 rpm, N<sub>max</sub> = 355 rpm</p>
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Progression ratio:</strong><br>
+          φ = (Nmax/Nmin)^(1/(n-1)) = (355/100)^(1/11) = (3.55)^(0.0909) = <strong>1.122 ≈ 1.12 (R20 series)</strong>
+        </div></div>
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Spindle speeds from R20 series (φ = 1.12):</strong><br>
+          100, 112, 125, 140, 160, 180, 200, 224, 250, 280, 315, 355 rpm
+        </div></div>
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Verification:</strong> Since φ calculated = 1.12 matches R20 series standard step ratio, all speeds are standard preferred numbers. ✓
+        </div></div>
+      </div>
+    </div>
+
+    <div class="solved-problem">
+      <div class="solved-problem-head">Problem 2 — Design a 6-speed gearbox (2×3), common ratio = 1.2, input shaft speed = 300 rpm, motor speed = 1500 rpm, Power = 16 HP</div>
+      <div class="solved-problem-body">
+        <p><strong>Given:</strong> 6-speed, φ = 1.2, N<sub>input</sub> = 300 rpm, N<sub>motor</sub> = 1500 rpm, P = 16 HP</p>
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Structural formula:</strong> 2(1) × 3(2)<br>
+          Stage 1: 2 gear pairs, Stage 2: 3 gear pairs
+        </div></div>
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>6 output speeds:</strong><br>
+          N₁ = N<sub>min</sub><br>
+          N₂ = N₁ × 1.2<br>
+          N₃ = N₁ × 1.2² = N₁ × 1.44<br>
+          N₄ = N₁ × 1.2³ = N₁ × 1.728<br>
+          N₅ = N₁ × 1.2⁴ = N₁ × 2.0736<br>
+          N₆ = N₁ × 1.2⁵ = N₁ × 2.4883
+        </div></div>
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Transmission ratios for Stage 1 (2 gear pairs):</strong><br>
+          i₁ = 1 (direct), i₂ = 1/φ³ (for 2(1) arrangement, characteristic = 1)<br>
+          The two rays diverge/converge by φ step.
+        </div></div>
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Ray diagram:</strong> Draw shaft I → II with 2 rays (Stage 1), then shaft II → III with 3 rays each (Stage 2), giving 2 × 3 = 6 speeds at output shaft.
+        </div></div>
+      </div>
+    </div>
+
+    <div class="solved-problem">
+      <div class="solved-problem-head">Problem 3 — 6(3×2) speed gear box, 600–1600 rpm, 10 HP — Ray diagram & shaft sizes</div>
+      <div class="solved-problem-body">
+        <p><strong>Given:</strong> 6-speed, 3×2, N<sub>min</sub> = 600 rpm, N<sub>max</sub> = 1600 rpm, P = 10 HP = 7.46 kW</p>
+        <div class="step"><span class="step-num">1</span><div>
+          φ = (1600/600)^(1/5) = (2.667)^0.2 = <strong>1.217</strong>
+        </div></div>
+        <div class="step"><span class="step-num">2</span><div>
+          Speeds: 600, 730, 888, 1080, 1315, 1600 rpm
+        </div></div>
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Shaft torque</strong> (for shaft sizing):<br>
+          T = P/ω = 7460 / (2π × N/60)<br>
+          At minimum speed (600 rpm): T_max = 7460 / (2π × 600/60) = 7460/62.83 = <strong>118.7 N·m</strong>
+        </div></div>
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Shaft diameter:</strong> d = (16T / π × τ_allow)^(1/3)<br>
+          Assuming τ_allow = 55 MPa for steel:<br>
+          d = (16 × 118.7 / (π × 55×10⁶))^(1/3) = (1.1×10⁻⁵)^(1/3) ≈ <strong>22 mm</strong> (use standard 25 mm)
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PYQ ── -->
+  <section class="section" id="pyq">
+    <h2 class="section-title">📝 PYQ — Module 1 Questions</h2>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.a)</span><span class="pyq-q">Explain briefly the term progression ratio.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Progression ratio (φ) is the ratio between two adjacent spindle speeds when speeds are arranged in geometric progression.</p>
+        <div class="formula-box">φ = N₂/N₁ = N₃/N₂ = ... = (Nmax/Nmin)^(1/(n-1))</div>
+        <p>It ensures uniform speed loss across the range and minimum number of gears.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.b)</span><span class="pyq-q">What are the requirements of a speed gear box?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L1</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <ul>
+          <li>Must provide the designed series of spindle speeds.</li>
+          <li>Must transmit the required power to the spindle.</li>
+          <li>Smooth, silent operation.</li>
+          <li>Simple construction and easy maintenance access.</li>
+        </ul>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (II)</span><span class="pyq-q">The minimum and maximum speed of a 6(3×2) speed gear box to transmit 10 HP are 600 and 1600 rpm. Construct the ray diagram and calculate the shaft sizes.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See Solved Problem 3 above for full step-by-step solution.</p>
+        <p><strong>Answer summary:</strong> φ = 1.217, Speeds = 600, 730, 888, 1080, 1315, 1600 rpm. Shaft diameter ≈ 25 mm at the input shaft. Draw 3-shaft ray diagram with 3 rays in Stage 1, 2 rays in Stage 2.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (III)</span><span class="pyq-q">Explain speed mechanism in lathe.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Speed Mechanism in Lathe</strong> section above. Include: motor → countershaft → headstock gear box → spindle, back gear arrangement, and Norton gear box for feed mechanism.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.a)</span><span class="pyq-q">Briefly explain ray diagrams.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>A ray diagram is a graphical representation of the drive arrangement in general form. Vertical lines represent shafts, horizontal lines represent speeds on a log scale. Slanted lines (rays) represent gear pairs connecting speeds on adjacent shafts. The slope of each ray indicates the transmission ratio.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.b)</span><span class="pyq-q">Describe stepped and stepless regulation of speeds.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L1</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Stepped vs. Stepless Speed Regulation</strong> comparison table above.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (II)</span><span class="pyq-q">Design a 6-speed gearbox (2×3), common ratio = 1.2, input shaft speed = 300 rpm, motor speed = 1500 rpm, Power = 16 HP.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L4</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See Solved Problem 2 above for complete solution.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (III)</span><span class="pyq-q">Explain the feed and speed mechanisms in milling machine with neat sketches.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Speed Mechanism in Milling Machine</strong> section above. Include: multi-speed gear box for spindle, independent feed gear box, overarm, arbor support. Sketch should show motor → belt → spindle gear box, and separate feed motor → feed gear box → table drives (longitudinal, transverse, vertical).</p>
+      </div></details>
+    </div>
+  </section>
+</main>
+</div>
+
+<footer>
+  <p>ME 19-205-0806 Production Technology &nbsp;|&nbsp; Module 1: Kinematics of Machine Tools &nbsp;|&nbsp; Prof. Pramod (PRK)</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

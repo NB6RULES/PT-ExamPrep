@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 3 — Powder Metallurgy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-brand">⚙️ Production Technology</div>
+  <div class="topnav-links">
+    <a href="index.html">Home</a>
+    <a href="module1.html">Module 1</a>
+    <a href="module2.html">Module 2</a>
+    <a href="module3.html" class="active">Module 3</a>
+    <a href="module4.html">Module 4</a>
+    <a href="pyq.html">PYQ</a>
+  </div>
+  <button class="theme-btn" id="theme-btn">🌙</button>
+</nav>
+
+<div class="module-layout">
+<nav class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Module 3</div>
+    <a href="#intro">Introduction</a>
+    <a href="#process-flow">Process Flow</a>
+    <a href="#powder-production">Powder Production</a>
+    <a href="#characteristics">Powder Characteristics</a>
+    <a href="#mixing">Mixing &amp; Blending</a>
+    <a href="#compacting">Compacting</a>
+    <a href="#sintering">Sintering</a>
+    <a href="#hot-pressing">Hot Pressing</a>
+    <a href="#secondary">Secondary Operations</a>
+    <a href="#applications">Applications</a>
+    <a href="#adv-disadv">Advantages &amp; Disadvantages</a>
+    <a href="#pyq">PYQ Questions</a>
+  </div>
+</nav>
+
+<main class="content">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <div class="page-header">
+    <div class="module-badge mod3-badge">🧱 Module 3</div>
+    <h1>Powder Metallurgy</h1>
+    <p>Definition, powder production, characteristics, mixing/blending, compacting, sintering, secondary operations, and applications. (Prof. Jinu — JNM)</p>
+  </div>
+
+  <!-- ── INTRO ── -->
+  <section class="section" id="intro">
+    <h2 class="section-title">🔍 Introduction</h2>
+    <div class="subsection">
+      <p><strong>Powder Metallurgy (P/M)</strong> is a branch of metallurgy that deals with the production of metal and non-metal powders and the manufacture of components by using these powders. The powders are <strong>blended, pressed into desired shape,</strong> and <strong>heated to bond surfaces</strong>.</p>
+
+      <h3>Why Powder Metallurgy is Important</h3>
+      <ul>
+        <li>P/M parts can be mass produced to <strong>net shape or near net shape</strong>.</li>
+        <li>Very little material waste — only ~3%.</li>
+        <li>Parts can be made with a <strong>specified level of porosity</strong> (filters, oil-impregnated bearings, gears).</li>
+        <li>Difficult-to-fabricate parts can be shaped (e.g., tungsten filaments for incandescent lamps).</li>
+        <li>Certain alloy combinations and cermets can only be made by P/M.</li>
+        <li>Production can be automated for economical manufacturing.</li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>High tooling and equipment costs.</li>
+        <li>Metallic powders are expensive.</li>
+        <li>Problems in storing and handling (degradation, fire hazard).</li>
+        <li>Limitations on part geometry — powders do not flow readily.</li>
+        <li>Variations in density may be a problem for complex geometries.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── PROCESS FLOW ── -->
+  <section class="section" id="process-flow">
+    <h2 class="section-title">🔄 Basic Process Flow</h2>
+    <div class="subsection">
+      <div class="diagram-wrap">
+        <svg width="500" height="100" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- PM Process Flow -->
+          <style>.pf { font-family: sans-serif; font-size: 10px; font-weight: bold; }</style>
+          <!-- Boxes -->
+          <rect x="5" y="25" width="85" height="45" rx="6" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+          <text x="47" y="47" text-anchor="middle" class="pf" fill="#2f9e44">Powder</text>
+          <text x="47" y="60" text-anchor="middle" class="pf" fill="#2f9e44">Production</text>
+          <text x="97" y="50" text-anchor="middle" font-size="16" fill="#6c757d">→</text>
+          <rect x="107" y="25" width="80" height="45" rx="6" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <text x="147" y="47" text-anchor="middle" class="pf" fill="#1971c2">Mixing &amp;</text>
+          <text x="147" y="60" text-anchor="middle" class="pf" fill="#1971c2">Blending</text>
+          <text x="197" y="50" text-anchor="middle" font-size="16" fill="#6c757d">→</text>
+          <rect x="207" y="25" width="80" height="45" rx="6" fill="#fff3bf" stroke="#e67700" stroke-width="1.5"/>
+          <text x="247" y="47" text-anchor="middle" class="pf" fill="#e67700">Compacting</text>
+          <text x="247" y="60" text-anchor="middle" class="pf" fill="#e67700">(Briquetting)</text>
+          <text x="297" y="50" text-anchor="middle" font-size="16" fill="#6c757d">→</text>
+          <rect x="307" y="25" width="80" height="45" rx="6" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <text x="347" y="47" text-anchor="middle" class="pf" fill="#7048e8">Sintering</text>
+          <text x="347" y="60" text-anchor="middle" class="pf" fill="#7048e8">(Heating)</text>
+          <text x="397" y="50" text-anchor="middle" font-size="16" fill="#6c757d">→</text>
+          <rect x="407" y="25" width="85" height="45" rx="6" fill="#ffe3e3" stroke="#c92a2a" stroke-width="1.5"/>
+          <text x="450" y="47" text-anchor="middle" class="pf" fill="#c92a2a">Finishing</text>
+          <text x="450" y="60" text-anchor="middle" class="pf" fill="#c92a2a">Operations</text>
+        </svg>
+        <figcaption>Basic steps in Powder Metallurgy process</figcaption>
+      </div>
+
+      <h3>Detailed Steps</h3>
+      <ol>
+        <li>Manufacturing of metal powders</li>
+        <li>Blending and mixing of powders</li>
+        <li>Compacting — compressed into desired shape to produce <em>green compact</em>, using punch-and-die press</li>
+        <li>Sintering — green compacts heated below melting point to bond particles into a hard, rigid mass</li>
+        <li>Finishing operations (sizing, machining, impregnation, infiltration)</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── POWDER PRODUCTION ── -->
+  <section class="section" id="powder-production">
+    <h2 class="section-title">⚗️ Methods of Powder Production</h2>
+    <div class="subsection">
+
+      <h3>1. Mechanical Pulverization</h3>
+      <ul>
+        <li><strong>Crushing:</strong> Solid materials crushed by hammers, jaw crushers, gyratory crushers. Brittle materials → angular particles; ductile → flaky. Suitable for brittle materials.</li>
+        <li><strong>Milling (Ball Mill):</strong> Most important and widely used method. Material tumbled in container with hard balls at controlled speed. Used for carbide-metal mixtures.</li>
+        <li><strong>Eddy Mill, Rod Mill</strong> — other variants for fine grinding.</li>
+      </ul>
+
+      <h3>2. Atomization</h3>
+      <p>Molten metal is broken into fine droplets which solidify into powder particles.</p>
+      <ul>
+        <li><strong>Water atomization:</strong> High-pressure water jet impinges on a stream of molten metal. Produces irregular particles.</li>
+        <li><strong>Gas atomization:</strong> High-pressure gas (air, nitrogen, argon) breaks up molten metal stream. Produces spherical particles.</li>
+        <li><strong>Centrifugal atomization:</strong> Molten metal fed onto a rotating disc; centrifugal force breaks it into droplets.</li>
+      </ul>
+      <div class="callout callout-info">
+        <strong>Most Important Method</strong>
+        Atomization is the most widely used commercial method for producing metal powders. It produces nearly spherical particles with excellent flow characteristics.
+      </div>
+
+      <h3>3. Shotting</h3>
+      <p>Molten metal poured through a sieve or orifice and cooled by dropping into water. Produces spherical particles of large size. Suitable for metals with low melting points (lead, tin, zinc).</p>
+
+      <h3>4. Reduction</h3>
+      <p>Pure metal obtained by reducing its oxide with a reducing gas at elevated temperature (below melting point) in a controlled furnace.</p>
+      <div class="formula-box">
+        Fe₃O₄ + 4CO → 3Fe + 4CO₂     (Iron powder)
+        Cu₂O + H₂ → 2Cu + H₂O        (Copper powder)
+
+        Also used for: Tungsten, Molybdenum, Ni, Cobalt
+      </div>
+
+      <h3>5. Electrolytic Deposition</h3>
+      <p>Metal deposited on cathode from electrolyte solution. The deposited metal is scraped off, cleaned, and pulverized to get very pure powder. Used for copper, iron, silver powders.</p>
+    </div>
+  </section>
+
+  <!-- ── CHARACTERISTICS ── -->
+  <section class="section" id="characteristics">
+    <h2 class="section-title">📊 Characteristics of Metal Powders</h2>
+    <div class="subsection">
+      <div class="diagram-wrap">
+        <svg width="460" height="160" viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Particle shapes -->
+          <!-- Spherical -->
+          <circle cx="50" cy="70" r="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+          <text x="50" y="110" text-anchor="middle" font-size="9" fill="#2f9e44">Spherical</text>
+          <!-- Nodular -->
+          <ellipse cx="130" cy="70" rx="28" ry="20" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <circle cx="120" cy="58" r="8" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <circle cx="140" cy="58" r="6" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <text x="130" y="110" text-anchor="middle" font-size="9" fill="#1971c2">Nodular</text>
+          <!-- Irregular -->
+          <polygon points="185,45 215,50 210,80 195,90 175,75 180,55" fill="#fff3bf" stroke="#e67700" stroke-width="1.5"/>
+          <text x="195" y="110" text-anchor="middle" font-size="9" fill="#e67700">Irregular</text>
+          <!-- Angular -->
+          <polygon points="250,45 280,45 275,90 255,90" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <text x="265" y="110" text-anchor="middle" font-size="9" fill="#7048e8">Angular</text>
+          <!-- Flaky -->
+          <ellipse cx="345" cy="70" rx="35" ry="10" fill="#ffe3e3" stroke="#c92a2a" stroke-width="1.5" transform="rotate(-15, 345, 70)"/>
+          <text x="345" y="110" text-anchor="middle" font-size="9" fill="#c92a2a">Flaky</text>
+          <!-- Dendritic -->
+          <line x1="415" y1="45" x2="415" y2="90" stroke="#495057" stroke-width="2"/>
+          <line x1="407" y1="57" x2="423" y2="57" stroke="#495057" stroke-width="1.5"/>
+          <line x1="407" y1="70" x2="423" y2="70" stroke="#495057" stroke-width="1.5"/>
+          <line x1="407" y1="83" x2="423" y2="83" stroke="#495057" stroke-width="1.5"/>
+          <text x="415" y="110" text-anchor="middle" font-size="9" fill="#495057">Dendritic</text>
+          <text x="230" y="140" text-anchor="middle" font-size="9" fill="#6c757d">Particle shapes in Powder Metallurgy — shape depends on manufacturing method</text>
+        </svg>
+        <figcaption>Common particle shapes in powder metallurgy</figcaption>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Characteristic</th><th>Definition</th><th>Significance</th></tr></thead>
+          <tbody>
+            <tr><td><strong>(a) Particle Shape</strong></td><td>Shape of individual particles (spherical, nodular, irregular, angular, flaky, dendritic)</td><td>Influences flow characteristics; irregular shapes give better green strength; spherical shapes have good sintering properties</td></tr>
+            <tr><td><strong>(b) Particle Size</strong></td><td>Determined by sieve analysis or microscopic measurement</td><td>Influences porosity, compressibility, and shrinkage</td></tr>
+            <tr><td><strong>(c) Size Distribution</strong></td><td>Sieve analysis — amount passing through 100, 200 mesh etc.</td><td>Influences packing and behavior during moulding and sintering</td></tr>
+            <tr><td><strong>(d) Flow Rate</strong></td><td>Ability of powder to flow readily and conform to mould cavity</td><td>Depends on particle size, shape, distribution, moisture, friction</td></tr>
+            <tr><td><strong>(e) Compressibility</strong></td><td>Ratio of initial powder volume to volume of compact part</td><td>Depends on particle size, distribution, shape; determines achievable density</td></tr>
+            <tr><td><strong>(f) Apparent Density</strong></td><td>Ratio of weight to volume of loosely filled mixture</td><td>Depends on particle size; determines die volume needed</td></tr>
+            <tr><td><strong>(g) Purity</strong></td><td>Freedom from impurities (oxides, gaseous impurities)</td><td>Impurities reduce die life and affect sintering. Removed by reducing atmosphere during sintering</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MIXING ── -->
+  <section class="section" id="mixing">
+    <h2 class="section-title">🔀 Mixing and Blending</h2>
+    <div class="subsection">
+      <p><strong>Blending</strong> — powders of the <em>same chemistry</em> but different particle sizes are intermingled to reduce porosity.</p>
+      <p><strong>Mixing</strong> — powders of <em>different chemistries</em> are combined to create alloys or composite mixtures.</p>
+      <h3>Purpose</h3>
+      <ul>
+        <li>Obtain uniform distribution of particle sizes.</li>
+        <li>Making alloyed powders by combining homogenous mixtures.</li>
+        <li>Combining metallic and non-metallic powders.</li>
+        <li>Ensuring filling up of interstices.</li>
+        <li><strong>Binders</strong> added to enhance green strength during compaction.</li>
+        <li><strong>Lubricants</strong> added to improve flow characteristics and reduce friction between particles and dies during compaction.</li>
+      </ul>
+      <h3>Equipment</h3>
+      <p>Double cone mixer or Y-cone mixer are most common. Other geometries: cylindrical, rotating cube, twin shell.</p>
+      <div class="callout callout-warn">
+        <strong>Important</strong>
+        Lubricants (zinc stearate, stearic acid) are critical — they reduce die wear, ejection forces, and interparticle friction. Binders (wax, polymer) improve green compact strength.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPACTING ── -->
+  <section class="section" id="compacting">
+    <h2 class="section-title">🗜️ Compacting (Briquetting)</h2>
+    <div class="subsection">
+      <p>The main purpose of compacting is converting loose powder into a <strong>green compact</strong> of accurate shape and size by application of pressure (80–1600 MPa).</p>
+      <p>The green compact must have adequate green strength for handling before sintering.</p>
+
+      <div class="diagram-wrap">
+        <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Compaction die cross-section -->
+          <!-- Die walls -->
+          <rect x="80" y="20" width="20" height="160" rx="2" fill="#868e96" stroke="#495057" stroke-width="1.5"/>
+          <rect x="200" y="20" width="20" height="160" rx="2" fill="#868e96" stroke="#495057" stroke-width="1.5"/>
+          <!-- Upper punch -->
+          <rect x="100" y="30" width="100" height="30" rx="2" fill="#adb5bd" stroke="#495057" stroke-width="1.5"/>
+          <text x="150" y="50" text-anchor="middle" font-size="10" fill="#212529">Upper Punch</text>
+          <!-- Arrow down -->
+          <line x1="150" y1="15" x2="150" y2="28" stroke="#c92a2a" stroke-width="2" marker-end="url(#arr)"/>
+          <text x="165" y="20" font-size="9" fill="#c92a2a">F↓</text>
+          <!-- Powder in die cavity -->
+          <rect x="100" y="60" width="100" height="80" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1" stroke-dasharray="3,2"/>
+          <text x="150" y="100" text-anchor="middle" font-size="10" fill="#2f9e44">Metal</text>
+          <text x="150" y="113" text-anchor="middle" font-size="10" fill="#2f9e44">Powder</text>
+          <!-- Lower punch -->
+          <rect x="100" y="140" width="100" height="30" rx="2" fill="#adb5bd" stroke="#495057" stroke-width="1.5"/>
+          <text x="150" y="160" text-anchor="middle" font-size="10" fill="#212529">Lower Punch</text>
+          <!-- Die label -->
+          <text x="68" y="100" text-anchor="end" font-size="9" fill="#6c757d">Die</text>
+          <text x="240" y="100" font-size="9" fill="#6c757d">Die</text>
+          <!-- Pressure labels -->
+          <text x="150" y="185" text-anchor="middle" font-size="9" fill="#6c757d">Compaction Pressure: 80–1400 MPa</text>
+        </svg>
+        <figcaption>Conventional compaction: Metal powder compressed in punch-and-die system to form green compact</figcaption>
+      </div>
+
+      <h3>Effects of Compaction</h3>
+      <ul>
+        <li>Reduces voids between powder particles and increases density of compact.</li>
+        <li>Produces adhesion and cold welding of powders — gives sufficient green strength.</li>
+        <li>Plastically deforms the powder particles — allows recrystallization during subsequent sintering.</li>
+      </ul>
+
+      <h3>Methods of Compacting</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Method</th><th>Description</th><th>Application</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Conventional Pressing</strong></td><td>Powder in die cavity, compressed by upper/lower punches. Mechanical (low pressure) or hydraulic press (high pressure)</td><td>Most common; simple shapes</td></tr>
+            <tr><td><strong>Centrifugal Compacting</strong></td><td>Mould filled with powder then centrifuged. Pressure of ~3 MPa. High, uniform density</td><td>Heavy metals like WC</td></tr>
+            <tr><td><strong>Slip Casting</strong></td><td>Powder as slurry in plaster mould. Liquid absorbed by mould, leaving solid compact</td><td>Ceramics, complex shapes</td></tr>
+            <tr><td><strong>Extrusion (Cold/Hot)</strong></td><td>Powder mixed with binder, formed into billet, extruded through die. Cold: with binder; Hot: heated billet</td><td>Cemented carbide drills, cutters</td></tr>
+            <tr><td><strong>Rolling</strong></td><td>Metal powder fed between two rolls — forms continuous strips with controlled porosity</td><td>Cu, Brass, Bronze, Ni, SS strips</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SINTERING ── -->
+  <section class="section" id="sintering">
+    <h2 class="section-title">🔥 Sintering</h2>
+    <div class="subsection">
+      <p>Sintering is the <strong>heating of green compact to a temperature below the melting point</strong> of the principal powder to bond particles into a hard, rigid mass.</p>
+      <p>Purpose: Increase strength and hardness. Must be done in controlled, inert or reducing atmosphere (or vacuum) to prevent oxidation.</p>
+
+      <h3>Mechanism of Bonding</h3>
+      <ol>
+        <li>Melting of minor constituents in the powder particles.</li>
+        <li>Diffusion between the powder particles.</li>
+        <li>Mechanical bonding.</li>
+      </ol>
+
+      <h3>Sintering Sequence (Microscopic Scale)</h3>
+      <ol>
+        <li>Particle bonding initiated at contact points.</li>
+        <li>Contact points grow into "necks".</li>
+        <li>Pores between particles are reduced in size.</li>
+        <li>Grain boundaries develop between particles in place of necked regions.</li>
+      </ol>
+
+      <h3>Types of Sintering</h3>
+      <ul>
+        <li><strong>Solid phase sintering:</strong> Heated above recrystallization temperature of low-melting metal (most common).</li>
+        <li><strong>Liquid phase sintering:</strong> Above melting point of one alloy constituent, forming a liquid phase that aids bonding.</li>
+      </ul>
+
+      <h3>Sintering Stages</h3>
+      <ul>
+        <li><strong>Drying stage</strong> — removal of lubricants and binders.</li>
+        <li><strong>Actual sintering</strong> — residual stresses relaxed, particles deform plastically, voids close causing shrinkage.</li>
+        <li><strong>Controlled cooling</strong> — to prevent cracking.</li>
+      </ul>
+
+      <h3>Critical Factors</h3>
+      <div class="callout callout-tip">
+        <strong>Three Critical Factors</strong>
+        Time, temperature, and furnace atmosphere control the sintering process.
+      </div>
+
+      <h3>Sintering Temperatures for Common Metals</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Material</th><th>Temperature (°C)</th><th>Time (min)</th></tr></thead>
+          <tbody>
+            <tr><td>Copper, Brass, Bronze</td><td>760–900</td><td>10–40</td></tr>
+            <tr><td>Nickel</td><td>1000–1150</td><td>30–40</td></tr>
+            <tr><td>Stainless Steels</td><td>1100–1290</td><td>30–60</td></tr>
+            <tr><td>Ferrites</td><td>1200–1500</td><td>10–600</td></tr>
+            <tr><td>Tungsten Carbide</td><td>1430–1500</td><td>20–30</td></tr>
+            <tr><td>Molybdenum</td><td>2050</td><td>120</td></tr>
+            <tr><td>Tungsten</td><td>2350</td><td>480</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRE-SINTERING ── -->
+  <section class="section" id="hot-pressing">
+    <h2 class="section-title">🛠️ Pre-Sintering &amp; Hot Pressing</h2>
+    <div class="subsection">
+      <h3>Pre-Sintering</h3>
+      <p>If a P/M part needs machining (drilling), it is difficult on fully sintered hard material. Pre-sintering heats the compact to a temperature <strong>well below the final sintering temperature</strong> so it gains enough strength for machining without being fully hardened. After machining, the part undergoes final sintering.</p>
+
+      <h3>Hot Pressing</h3>
+      <p>Process of compacting metal powders at high temperature — pressure and sintering temperature applied simultaneously. This eliminates porosity completely. Used when near-zero porosity is required.</p>
+      <ul>
+        <li>Sufficient pressure applied at sintering temperature brings particles together.</li>
+        <li>Accelerates sintering — shorter cycle times.</li>
+        <li>Better mechanical properties than conventional compacting + sintering.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SECONDARY OPERATIONS ── -->
+  <section class="section" id="secondary">
+    <h2 class="section-title">🔧 Secondary Operations</h2>
+    <div class="subsection">
+      <p>Secondary operations are intended to provide dimensional tolerances, improved physical properties, and better surface finish.</p>
+
+      <h3>1. Sizing (Repressing)</h3>
+      <p>Repressing the sintered component in a die to meet required dimensional accuracy, strength, and surface finish. The component is placed in a master die and pressure applied.</p>
+
+      <h3>2. Impregnation</h3>
+      <p>Oil or other fluid is permeated into the pores of sintered P/M part. Parts immersed in heated oil tank for a period of time. Vacuum application aids the process.</p>
+      <ul>
+        <li>Products: <strong>oil-impregnated bearings, gears</strong> (self-lubricating).</li>
+        <li>Also: polymer resin impregnation for pressure-tight parts.</li>
+      </ul>
+
+      <h3>3. Infiltration</h3>
+      <p>Pores of the P/M part are filled with a <strong>molten metal</strong> (filler metal must have lower melting point than P/M part). Filler metal drawn into pores by capillary action.</p>
+      <ul>
+        <li>Result: nonporous structure with uniform density.</li>
+        <li>Improved toughness and strength.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── APPLICATIONS ── -->
+  <section class="section" id="applications">
+    <h2 class="section-title">🏭 Applications of P/M</h2>
+    <div class="subsection">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Application</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Self-Lubricating Bearings (Porous Bronze)</strong></td><td>Cu + Sn (90:10) + graphite + stearic acid. Cold compacted, sintered at 800°C, repressed, impregnated with oil. Graphite acts as solid lubricant. Used where lubrication is not possible.</td></tr>
+            <tr><td><strong>Filters</strong></td><td>Porous P/M parts used to filter liquids and gases.</td></tr>
+            <tr><td><strong>Tungsten Filaments</strong></td><td>Incandescent lamp bulbs — only possible by P/M due to very high melting point of tungsten.</td></tr>
+            <tr><td><strong>Cemented Carbides (WC tools)</strong></td><td>Carbides of W, Ta, Ti, Mo bonded by Co or Ni. Used for cutting tools, wire drawing dies.</td></tr>
+            <tr><td><strong>Electrical Contacts</strong></td><td>Cu + Ag + W/Mo/Ni for wear resistance and electrical conductivity.</td></tr>
+            <tr><td><strong>Friction Materials</strong></td><td>Clutch liners and brake bands.</td></tr>
+            <tr><td><strong>Magnetic Materials</strong></td><td>Ferrites, Alnico magnets.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-tip">
+        <strong>Self-Lubricating Bearing Process (Common Exam Question)</strong>
+        Mix Cu+Sn+graphite → Cold compaction (20–50 kg/mm²) → Sinter at ~800°C (tin-rich liquid phase forms, absorbed by copper) → Repress/size → Impregnate with oil under vacuum/pressure
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ADV/DISADV ── -->
+  <section class="section" id="adv-disadv">
+    <h2 class="section-title">✅ Advantages &amp; Disadvantages</h2>
+    <div class="subsection">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Advantages</th><th>Disadvantages</th></tr></thead>
+          <tbody>
+            <tr><td>High production rates even for complex parts</td><td>High cost of metal powders vs raw material for casting/forging</td></tr>
+            <tr><td>Near net shape components — less machining</td><td>High tooling and equipment cost</td></tr>
+            <tr><td>Bi-metallic products, sintered carbides, porous bearings — only possible by P/M</td><td>Uniformly high density products are difficult to produce</td></tr>
+            <tr><td>Unskilled/semi-skilled labor sufficient — low labor cost</td><td>Al, Mg, Ti, Zr powders present fire hazard and explosion risk</td></tr>
+            <tr><td>Properties can be controlled (porosity, density)</td><td>Limitations on part geometry</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PYQ ── -->
+  <section class="section" id="pyq">
+    <h2 class="section-title">📝 PYQ — Module 3 Questions</h2>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.e)</span><span class="pyq-q">Explain impregnation process in P/M with an example.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Impregnation is the process where oil or other fluid is permeated into the pores of a sintered P/M part. Parts are immersed in a tank of heated oil; application of vacuum aids the process.</p>
+        <p><strong>Example:</strong> Oil-impregnated porous bronze bearings (self-lubricating bearings). During service, the bearing produces a constant supply of lubricant due to capillary action. Used where lubrication is difficult — small motors, household appliances.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.f)</span><span class="pyq-q">What is the purpose of mixing in powder metallurgy?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Purpose of mixing in P/M:</p>
+        <ul>
+          <li>Uniform distribution of particle sizes.</li>
+          <li>Making alloyed powders by combining different material powders.</li>
+          <li>Adding binders to enhance green compact strength.</li>
+          <li>Adding lubricants to reduce friction and die wear during compaction.</li>
+          <li>Combining metallic and non-metallic powders for composites/cermets.</li>
+        </ul>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (VI)</span><span class="pyq-q">Explain the atomization technique used for powder production.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Atomization section</strong> under Powder Production above. Cover all three types:</p>
+        <ul>
+          <li><strong>Water atomization:</strong> high-pressure water jet, irregular particles, most common for commercial use.</li>
+          <li><strong>Gas atomization:</strong> inert gas jet, spherical particles, good for reactive metals.</li>
+          <li><strong>Centrifugal atomization:</strong> rotating disc, very spherical and uniform particles.</li>
+        </ul>
+        <p>Include a diagram of gas or water atomization setup.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (VII)</span><span class="pyq-q">What are the methods used in metal powder compaction?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L1</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Compacting Methods table</strong> above. Cover all 5 methods: Conventional Pressing, Centrifugal Compacting, Slip Casting, Extrusion (cold/hot), Rolling. Include the compaction die diagram.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.e)</span><span class="pyq-q">Describe the basic concept of powder metallurgy process.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>P/M is a process of making components from metallic powders. Powders are Blended → Pressed into desired shape → Heated to bond surfaces. Basic steps: powder production → mixing → compacting (green compact, 80–1600 MPa) → sintering (below melting point) → finishing operations.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.f)</span><span class="pyq-q">Detail the applications of powder metallurgy products.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Applications table</strong> above: Self-lubricating bearings, tungsten filaments (lamp bulbs), cemented carbide cutting tools (WC), electrical contacts, friction materials (clutch liners/brake bands), magnetic materials (ferrites, Alnico).</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (VI)</span><span class="pyq-q">Explain the manufacture of self-lubricating steel bearing using powder metallurgy with neat diagrams.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Self-Lubricating Bearings callout box</strong> above for step-by-step process:</p>
+        <ol>
+          <li>Mix Cu (90%) + Sn (10%) + graphite + stearic acid</li>
+          <li>Cold compaction at 20–50 kg/mm²</li>
+          <li>Sintering at ~800°C in reducing atmosphere (tin-rich liquid phase forms)</li>
+          <li>Repress (sizing) to eliminate distortion</li>
+          <li>Impregnate with oil using pressure/vacuum</li>
+        </ol>
+        <p>Draw cross-section of bearing showing porous structure with oil droplets. Explain how capillary action provides continuous lubrication during service.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (VII)</span><span class="pyq-q">Explain powder metallurgy operations mixing and blending, compacting, sintering with examples. What are the properties, advantages and disadvantages?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO3</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Cover all three sections above: Mixing &amp; Blending, Compacting, and Sintering. For properties, refer to Powder Characteristics table. For advantages and disadvantages, see the Advantages &amp; Disadvantages section above.</p>
+      </div></details>
+    </div>
+  </section>
+</main>
+</div>
+
+<footer>
+  <p>ME 19-205-0806 Production Technology &nbsp;|&nbsp; Module 3: Powder Metallurgy &nbsp;|&nbsp; Prof. Jinu (JNM)</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

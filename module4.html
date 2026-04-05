@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 4 — Hydraulics &amp; Cost Estimation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-brand">⚙️ Production Technology</div>
+  <div class="topnav-links">
+    <a href="index.html">Home</a>
+    <a href="module1.html">Module 1</a>
+    <a href="module2.html">Module 2</a>
+    <a href="module3.html">Module 3</a>
+    <a href="module4.html" class="active">Module 4</a>
+    <a href="pyq.html">PYQ</a>
+  </div>
+  <button class="theme-btn" id="theme-btn">🌙</button>
+</nav>
+
+<div class="module-layout">
+<nav class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-title">Module 4</div>
+    <a href="#hydraulics-intro">Hydraulic Systems Intro</a>
+    <a href="#jic-symbols">JIC Symbols</a>
+    <a href="#valves">Hydraulic Valves</a>
+    <a href="#circuits">Hydraulic Circuits</a>
+    <a href="#shaper-circuit">Shaper Machine Circuit</a>
+    <a href="#drilling-circuit">Drilling Machine Circuit</a>
+    <a href="#cost-intro">Cost Estimation Intro</a>
+    <a href="#foundry-cost">Foundry Shop Costing</a>
+    <a href="#welding-cost">Welding Shop Costing</a>
+    <a href="#machine-cost">Machine Shop Costing</a>
+    <a href="#solved">Solved Problems</a>
+    <a href="#pyq">PYQ Questions</a>
+  </div>
+</nav>
+
+<main class="content">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <div class="page-header">
+    <div class="module-badge mod4-badge">💧 Module 4</div>
+    <h1>Hydraulic Operations &amp; Cost Estimation</h1>
+    <p>JIC symbols, hydraulic valves, machine circuits, and production cost estimation in foundry, welding &amp; machine shops. (Prof. Jinu — JNM)</p>
+  </div>
+
+  <!-- ── HYDRAULICS INTRO ── -->
+  <section class="section" id="hydraulics-intro">
+    <h2 class="section-title">💧 Introduction to Hydraulic Systems</h2>
+    <div class="subsection">
+      <p>Hydraulic systems use pressurized oil (hydraulic fluid) to transmit power and perform work. In machine tools, hydraulic systems provide smooth, stepless speed variation and high forces at low speeds.</p>
+      <h3>Basic Elements of a Hydraulic Circuit</h3>
+      <ul>
+        <li><strong>Hydraulic pump</strong> — converts mechanical energy to hydraulic energy (pressure + flow)</li>
+        <li><strong>Actuators</strong> — cylinders (linear) or motors (rotary) that convert hydraulic energy to mechanical work</li>
+        <li><strong>Control valves</strong> — pressure, flow, and direction control valves</li>
+        <li><strong>Reservoir (tank)</strong> — stores hydraulic oil</li>
+        <li><strong>Filters</strong> — clean the oil</li>
+        <li><strong>Relief valve</strong> — limits maximum system pressure (safety)</li>
+        <li><strong>Piping and fittings</strong> — connect components</li>
+      </ul>
+      <h3>Cutaway vs. Schematic Circuit Diagrams</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Cutaway Diagrams</th><th>Schematic Circuit Diagrams</th></tr></thead>
+          <tbody>
+            <tr><td>Show physical cross-section of actual components</td><td>Use standardized JIC symbols to represent components</td></tr>
+            <tr><td>Complex and hard to follow circuit flow</td><td>Simple to read and trace fluid flow</td></tr>
+            <tr><td>Good for understanding component internals</td><td>Preferred for circuit analysis and troubleshooting</td></tr>
+            <tr><td>Cannot easily represent full system</td><td>Can represent complete system on one diagram</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-tip">
+        <strong>Why Schematic Diagrams are Preferred</strong>
+        Schematic circuit diagrams using JIC symbols are preferred because they clearly show fluid flow paths, valve positions, and circuit connections — essential for troubleshooting and designing hydraulic systems.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JIC SYMBOLS ── -->
+  <section class="section" id="jic-symbols">
+    <h2 class="section-title">📐 JIC Symbols</h2>
+    <div class="subsection">
+      <p><strong>JIC (Joint Industry Council)</strong> symbols are standardized symbolic drawings used in schematics to represent hydraulic components.</p>
+
+      <div class="diagram-wrap">
+        <svg width="500" height="280" viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+          <style>.js { font-family: sans-serif; font-size: 9px; }</style>
+          <!-- Lines and connections -->
+          <text x="10" y="20" font-size="11" font-weight="bold" fill="#1971c2">Lines</text>
+          <!-- Working line -->
+          <line x1="10" y1="35" x2="90" y2="35" stroke="#212529" stroke-width="2"/>
+          <text x="95" y="39" class="js">Working line (main)</text>
+          <!-- Pilot control line -->
+          <line x1="10" y1="55" x2="90" y2="55" stroke="#212529" stroke-width="1.5" stroke-dasharray="8,3"/>
+          <text x="95" y="59" class="js">Pilot control line</text>
+          <!-- Drain line -->
+          <line x1="10" y1="75" x2="90" y2="75" stroke="#212529" stroke-width="1" stroke-dasharray="2,3"/>
+          <text x="95" y="79" class="js">Drain line</text>
+          <!-- Flexible line -->
+          <path d="M 10 95 Q 30 85 50 95 Q 70 105 90 95" stroke="#212529" stroke-width="1.5" fill="none"/>
+          <text x="95" y="99" class="js">Flexible line</text>
+
+          <!-- Pumps and Motors -->
+          <text x="10" y="125" font-size="11" font-weight="bold" fill="#1971c2">Pumps &amp; Motors</text>
+          <!-- Fixed pump -->
+          <circle cx="30" cy="150" r="18" fill="none" stroke="#212529" stroke-width="1.5"/>
+          <polygon points="20,155 40,155 30,140" fill="#212529"/>
+          <text x="55" y="154" class="js">Fixed disp. pump →</text>
+          <!-- Fixed motor -->
+          <circle cx="175" cy="150" r="18" fill="none" stroke="#212529" stroke-width="1.5"/>
+          <polygon points="165,145 185,145 175,160" fill="#212529"/>
+          <text x="200" y="154" class="js">Fixed disp. motor</text>
+          <!-- Variable pump -->
+          <circle cx="30" cy="185" r="18" fill="none" stroke="#212529" stroke-width="1.5"/>
+          <polygon points="20,190 40,190 30,175" fill="#212529"/>
+          <line x1="15" y1="170" x2="45" y2="200" stroke="#212529" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <text x="55" y="189" class="js">Variable pump</text>
+
+          <!-- Valves -->
+          <text x="260" y="20" font-size="11" font-weight="bold" fill="#1971c2">Valves (DCV)</text>
+          <!-- 4/3 DCV (3 boxes) -->
+          <rect x="260" y="35" width="30" height="30" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <rect x="290" y="35" width="30" height="30" fill="white" stroke="#1971c2" stroke-width="1.5"/>
+          <rect x="320" y="35" width="30" height="30" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <!-- Arrows in center box -->
+          <line x1="302" y1="42" x2="318" y2="42" stroke="#1971c2" stroke-width="1" marker-end="url(#arr)"/>
+          <line x1="318" y1="58" x2="302" y2="58" stroke="#1971c2" stroke-width="1" marker-end="url(#arr)"/>
+          <text x="305" y="80" text-anchor="middle" class="js">4/3 DCV (All blocked center)</text>
+          <!-- 4/2 DCV -->
+          <rect x="380" y="35" width="30" height="30" fill="#fff3bf" stroke="#e67700" stroke-width="1.5"/>
+          <rect x="410" y="35" width="30" height="30" fill="white" stroke="#e67700" stroke-width="1.5"/>
+          <line x1="393" y1="42" x2="409" y2="58" stroke="#e67700" stroke-width="1"/>
+          <line x1="393" y1="58" x2="409" y2="42" stroke="#e67700" stroke-width="1"/>
+          <text x="410" y="80" text-anchor="middle" class="js">4/2 DCV</text>
+
+          <!-- Cylinder symbols -->
+          <text x="260" y="115" font-size="11" font-weight="bold" fill="#1971c2">Cylinders</text>
+          <!-- Single acting -->
+          <rect x="265" y="130" width="50" height="25" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+          <rect x="315" y="137" width="30" height="11" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+          <text x="300" y="175" text-anchor="middle" class="js">Single acting</text>
+          <!-- Double acting -->
+          <rect x="380" y="130" width="60" height="25" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <rect x="440" y="137" width="25" height="11" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <line x1="365" y1="137" x2="380" y2="137" stroke="#7048e8" stroke-width="1"/>
+          <line x1="365" y1="155" x2="380" y2="155" stroke="#7048e8" stroke-width="1"/>
+          <text x="420" y="175" text-anchor="middle" class="js">Double acting</text>
+
+          <!-- Relief valve symbol -->
+          <text x="10" y="225" font-size="11" font-weight="bold" fill="#1971c2">Other Symbols</text>
+          <rect x="10" y="235" width="30" height="30" fill="none" stroke="#212529" stroke-width="1.5"/>
+          <line x1="10" y1="265" x2="40" y2="235" stroke="#212529" stroke-width="1.5"/>
+          <line x1="37" y1="235" x2="40" y2="245" stroke="#212529" stroke-width="1.5"/>
+          <text x="50" y="254" class="js">Relief valve</text>
+          <!-- Filter -->
+          <circle cx="150" cy="250" r="15" fill="#fff3bf" stroke="#e67700" stroke-width="1.5"/>
+          <line x1="140" y1="250" x2="160" y2="250" stroke="#e67700" stroke-width="1.5" stroke-dasharray="2,2"/>
+          <text x="175" y="254" class="js">Filter</text>
+        </svg>
+        <figcaption>JIC hydraulic symbols reference — lines, pumps, motors, valves, cylinders</figcaption>
+      </div>
+
+      <h3>Valve Notation System</h3>
+      <p>Valve function given as <strong>P/Q</strong> where:</p>
+      <ul>
+        <li>P = number of main ports (inlets, outlets, exhausts)</li>
+        <li>Q = number of states/positions the valve can achieve</li>
+      </ul>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Valve</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>2/2 DCV</td><td>2 ports, 2 positions — simple on/off valve</td></tr>
+            <tr><td>3/2 DCV</td><td>3 ports (inlet, outlet, exhaust), 2 positions — directional control</td></tr>
+            <tr><td>4/2 DCV</td><td>4 ports, 2 positions — reverses cylinder direction</td></tr>
+            <tr><td>4/3 DCV</td><td>4 ports, 3 positions — most common; center position options: all-blocked, semi-open, open-center</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALVES ── -->
+  <section class="section" id="valves">
+    <h2 class="section-title">🔧 Hydraulic Valves</h2>
+    <div class="subsection">
+      <h3>1. Pressure Control Valves</h3>
+      <ul>
+        <li><strong>Relief Valve:</strong> Protects pump and lines from excessive pressure. When pressure exceeds setting, valve opens and returns fluid to reservoir. Sets maximum system pressure.</li>
+        <li><strong>Pressure Reducing Valve:</strong> Sets maximum pressure at the valve outlet — controlled output pressure lower than inlet pressure. Used in branch circuits requiring lower pressure.</li>
+      </ul>
+      <h3>2. Flow Control Valves</h3>
+      <ul>
+        <li><strong>Restrictor (Throttle valve):</strong> Controls oil flow rate, thus controlling actuator speed. Has adjustable orifice.</li>
+        <li><strong>Restrictor with Check Valve:</strong> Allows free flow in one direction, restricted flow in the other.</li>
+      </ul>
+      <h3>3. Directional Control Valves (DCV)</h3>
+      <ul>
+        <li>Controls direction of fluid flow to actuators.</li>
+        <li>Operated by: lever, push button, solenoid, pilot pressure, spring, roller.</li>
+        <li>4/3 DCV most common — controls double-acting cylinder (extend, retract, hold).</li>
+      </ul>
+      <h3>Other Components</h3>
+      <ul>
+        <li><strong>Check valve:</strong> Allows oil in one direction only.</li>
+        <li><strong>Accumulator:</strong> Pressure storage reservoir — enables system to cope with extreme demand, smooths out pulsations.</li>
+        <li><strong>Cylinder cushioning:</strong> Slows cylinder just before it reaches end of stroke to prevent shock.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── CIRCUITS ── -->
+  <section class="section" id="circuits">
+    <h2 class="section-title">🔌 Hydraulic Circuit Elements</h2>
+    <div class="subsection">
+      <h3>Basic Hydraulic Power Pack</h3>
+      <p>Electric Motor → Pump → Relief Valve → Filter → Tank → Actuator circuit.</p>
+      <h3>Types of Hydraulic Circuits</h3>
+      <ul>
+        <li><strong>Open center circuit:</strong> Allows flow on both sides when valve is in center position.</li>
+        <li><strong>Closed center (all-blocked):</strong> No flow in system when valve centered — pump pressure builds.</li>
+        <li><strong>Tandem center:</strong> Allows flow to tank when closed; pump unloaded.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SHAPER CIRCUIT ── -->
+  <section class="section" id="shaper-circuit">
+    <h2 class="section-title">⚙️ Hydraulic Circuit: Shaper Machine</h2>
+    <div class="subsection">
+      <h3>Basic Elements</h3>
+      <ul>
+        <li>Constant discharge hydraulic pump</li>
+        <li>Pressure relief valve</li>
+        <li>4-way (4/3) direction control valve (DCV)</li>
+        <li>Double-acting hydraulic cylinder with piston rod</li>
+      </ul>
+
+      <div class="diagram-wrap">
+        <svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shaper hydraulic circuit -->
+          <style>.sc { font-family: sans-serif; font-size: 9px; }</style>
+          <!-- Tank -->
+          <rect x="10" y="250" width="60" height="30" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <text x="40" y="268" text-anchor="middle" class="sc">TANK</text>
+          <!-- Pump -->
+          <circle cx="40" cy="210" r="18" fill="#d3f9d8" stroke="#2f9e44" stroke-width="1.5"/>
+          <polygon points="32,215 48,215 40,202" fill="#2f9e44"/>
+          <text x="40" y="235" text-anchor="middle" class="sc">Pump</text>
+          <line x1="40" y1="250" x2="40" y2="228" stroke="#1971c2" stroke-width="1.5"/>
+          <!-- Relief valve -->
+          <rect x="80" y="200" width="30" height="25" fill="none" stroke="#e67700" stroke-width="1.5"/>
+          <line x1="80" y1="225" x2="110" y2="200" stroke="#e67700" stroke-width="1.5"/>
+          <line x1="107" y1="200" x2="110" y2="210" stroke="#e67700" stroke-width="1.5"/>
+          <text x="95" y="240" text-anchor="middle" class="sc">Relief Valve</text>
+          <!-- Lines from pump to DCV -->
+          <line x1="40" y1="192" x2="40" y2="170" stroke="#1971c2" stroke-width="2"/>
+          <line x1="40" y1="170" x2="200" y2="170" stroke="#1971c2" stroke-width="2"/>
+          <line x1="80" y1="200" x2="80" y2="212" stroke="#e67700" stroke-width="1.5"/>
+          <line x1="58" y1="205" x2="80" y2="205" stroke="#e67700" stroke-width="1.5"/>
+          <!-- Return to tank via relief valve -->
+          <line x1="95" y1="200" x2="95" y2="165" stroke="#e67700" stroke-width="1" stroke-dasharray="3,2"/>
+          <!-- DCV (4/3) -->
+          <rect x="170" y="155" width="40" height="35" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <rect x="210" y="155" width="40" height="35" fill="white" stroke="#1971c2" stroke-width="1.5"/>
+          <rect x="250" y="155" width="40" height="35" fill="#d0ebff" stroke="#1971c2" stroke-width="1.5"/>
+          <line x1="222" y1="162" x2="238" y2="162" stroke="#1971c2" stroke-width="1"/>
+          <line x1="238" y1="178" x2="222" y2="178" stroke="#1971c2" stroke-width="1"/>
+          <text x="215" y="200" text-anchor="middle" class="sc">4/3 DCV</text>
+          <text x="215" y="210" text-anchor="middle" class="sc">(4-way valve)</text>
+          <!-- Ports label -->
+          <text x="188" y="152" class="sc">A</text>
+          <text x="248" y="152" class="sc">B</text>
+          <text x="205" y="215" class="sc">E(P)</text>
+          <text x="225" y="215" class="sc">P(T)</text>
+          <!-- Cylinder -->
+          <rect x="340" y="130" width="100" height="40" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <rect x="440" y="142" width="40" height="16" fill="#e5dbff" stroke="#7048e8" stroke-width="1.5"/>
+          <text x="390" y="155" text-anchor="middle" class="sc">CYLINDER</text>
+          <text x="460" y="153" class="sc">Rod</text>
+          <!-- Lines from DCV to cylinder -->
+          <line x1="188" y1="155" x2="188" y2="130" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="188" y1="130" x2="340" y2="130" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="248" y1="155" x2="248" y2="170" stroke="#2f9e44" stroke-width="1.5"/>
+          <line x1="248" y1="170" x2="340" y2="170" stroke="#2f9e44" stroke-width="1.5"/>
+          <!-- Return line -->
+          <line x1="215" y1="190" x2="215" y2="260" stroke="#1971c2" stroke-width="1.5"/>
+          <line x1="40" y1="260" x2="215" y2="260" stroke="#1971c2" stroke-width="1.5"/>
+          <line x1="40" y1="250" x2="40" y2="260" stroke="#1971c2" stroke-width="1.5"/>
+          <!-- Labels -->
+          <text x="250" y="90" class="sc" fill="#c92a2a">Forward stroke: fluid → right side of cylinder → piston moves left (cutting)</text>
+          <text x="250" y="105" class="sc" fill="#7048e8">Return stroke: fluid → left side → piston moves right (faster — quick return)</text>
+          <text x="100" y="290" class="sc">Quick return: smaller area on rod side → same flow → higher piston speed</text>
+        </svg>
+        <figcaption>Hydraulic circuit for shaper machine: Pump → Relief valve → 4/3 DCV → Double-acting cylinder → Tank</figcaption>
+      </div>
+
+      <h3>Working</h3>
+      <ul>
+        <li>Hydraulic pump (constant discharge) delivers oil to the 4/3 direction control valve.</li>
+        <li>If pressure exceeds set limit, relief valve opens and returns oil to reservoir.</li>
+        <li><strong>Forward (cutting) stroke:</strong> Valve directs oil to right side (full bore end) of cylinder through port A → piston moves left → tool cuts workpiece. Oil from left side returns to tank through port B and P.</li>
+        <li><strong>Return stroke:</strong> Valve shifts → oil enters left side (rod end) through B → piston moves right. Oil from right side returns through A and P.</li>
+        <li><strong>Quick return:</strong> Rod side has smaller area → same oil flow results in higher piston speed during return stroke (automatically faster).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── DRILLING CIRCUIT ── -->
+  <section class="section" id="drilling-circuit">
+    <h2 class="section-title">🔩 Hydraulic Circuit: Drilling Machine</h2>
+    <div class="subsection">
+      <p>In a hydraulic drilling machine, the drill spindle is driven by a hydraulic motor and the feed is provided by a hydraulic cylinder.</p>
+      <h3>Components</h3>
+      <ul>
+        <li>Hydraulic pump (variable displacement)</li>
+        <li>Pressure relief valve (system safety)</li>
+        <li>4/3 DCV — controls drill spindle direction and feed cylinder</li>
+        <li>Flow control valve (throttle) — controls feed rate</li>
+        <li>Check valve — prevents reverse flow</li>
+        <li>Hydraulic motor — drives drill spindle</li>
+        <li>Feed cylinder — controls axial feed of drill</li>
+      </ul>
+      <h3>Working</h3>
+      <ul>
+        <li>Motor drives the drill spindle at speed set by flow control valve.</li>
+        <li>Feed cylinder advances the drill at controlled feed rate.</li>
+        <li>At end of stroke, DCV shifts to retract the drill (return stroke).</li>
+        <li>Flow control valve on feed cylinder ensures constant feed rate regardless of drilling resistance.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── COST ESTIMATION INTRO ── -->
+  <section class="section" id="cost-intro">
+    <h2 class="section-title">💰 Production Cost Estimation</h2>
+    <div class="subsection">
+      <p>Production cost estimation is the process of calculating the total cost of manufacturing a component before it is actually produced.</p>
+      <h3>Elements of Total Manufacturing Cost</h3>
+      <ol>
+        <li><strong>Material Cost</strong> — direct material cost (raw material + process scrap adjustment)</li>
+        <li><strong>Labour Cost</strong> — direct labour for manufacturing operations</li>
+        <li><strong>Direct Other Expenses</strong> — patterns, core boxes, power consumption, fixtures</li>
+        <li><strong>Overhead Expenses</strong> — supervisory staff, administration, lighting, water, depreciation (expressed as % of labour cost)</li>
+      </ol>
+      <div class="formula-box">
+        Total Cost = Material Cost + Labour Cost + Direct Expenses + Overheads
+        Factory Cost = Material Cost + Labour Cost + Direct Expenses + Factory Overheads
+        Cost of Production = Factory Cost + Administrative/Office Overheads
+        Selling Price = Cost of Production + Sales Overhead + Profit
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUNDRY COST ── -->
+  <section class="section" id="foundry-cost">
+    <h2 class="section-title">🏭 Cost Estimation in Foundry Shop</h2>
+    <div class="subsection">
+      <p>A foundry shop consists of: Pattern Making → Sand Mixing → Core Making → Mould Making → Melting → Pouring → Fettling → Inspection.</p>
+
+      <h3>Material Cost of Casting</h3>
+      <div class="formula-box">
+        Step 1: Net weight = Volume of casting × Density
+        Step 2: Add process scrap weight (runners, gates, risers)
+        Step 3: Add allowance for metal loss (oxidation, over-runs)
+        Step 4: Total weight × Cost per unit weight = Gross material cost
+        Step 5: Subtract scrap return value
+        Direct Material Cost = Gross material cost − Scrap return value
+      </div>
+
+      <h3>Labour Cost</h3>
+      <ul>
+        <li>Core making, mould making: based on time taken.</li>
+        <li>Melting, pouring, fettling, cleaning: calculated on per kg of cast weight basis.</li>
+      </ul>
+
+      <h3>Overheads</h3>
+      <p>Expressed as percentage of labour charges or per kg of casting weight. Includes: supervisory staff, pattern shop, inspection, admin, electricity, water.</p>
+    </div>
+  </section>
+
+  <!-- ── WELDING COST ── -->
+  <section class="section" id="welding-cost">
+    <h2 class="section-title">🔥 Cost Estimation in Welding Shop</h2>
+    <div class="subsection">
+      <h3>Cost Elements in Welding</h3>
+      <ol>
+        <li><strong>Direct Material Cost:</strong>
+          <ul>
+            <li>Cost of base materials (sheet, plate, section)</li>
+            <li>Cost of electrodes/filler material</li>
+          </ul>
+          <div class="formula-box">Weight of weld metal = Volume of weld × Density of weld material</div>
+        </li>
+        <li><strong>Direct Labour Cost:</strong>
+          <ul>
+            <li>Preparation (edge preparation, machining)</li>
+            <li>Actual welding (arc-on time)</li>
+            <li>Finishing (grinding, heat treatment, painting)</li>
+          </ul>
+        </li>
+        <li><strong>Direct Other Expenses:</strong>
+          <ul>
+            <li>Power consumed in arc welding:</li>
+          </ul>
+          <div class="formula-box">Power Cost = Voltage × Current × Arc-on time × Power cost per unit</div>
+          <ul><li>Cost of fixtures used</li></ul>
+        </li>
+        <li><strong>Overheads:</strong> Office/supervisory staff, lighting, depreciation, consumables.</li>
+      </ol>
+
+      <h3>Gas Welding vs Arc Welding</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th>Gas Welding (Oxy-acetylene)</th><th>Arc Welding</th></tr></thead>
+          <tbody>
+            <tr><td>Heat source</td><td>Combustion of gases</td><td>Electric arc</td></tr>
+            <tr><td>Filler material</td><td>Filler rods/wire</td><td>Electrode (consumable/non-consumable)</td></tr>
+            <tr><td>Cost estimation</td><td>Based on gas consumption + filler</td><td>Based on electrode weight + power + arc-on time</td></tr>
+            <tr><td>Leftward welding</td><td>Up to 5 mm thick — right to left</td><td>—</td></tr>
+            <tr><td>Rightward welding</td><td>Thicker plates — left to right; slower cooling</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MACHINE SHOP COST ── -->
+  <section class="section" id="machine-cost">
+    <h2 class="section-title">⚙️ Cost Estimation in Machine Shop</h2>
+    <div class="subsection">
+      <h3>Cost Elements</h3>
+      <ol>
+        <li><strong>Material Cost</strong> — raw material (bar stock, forging, etc.)</li>
+        <li><strong>Machining Cost</strong> — based on time per operation × rate per hour</li>
+        <li><strong>Tool Cost</strong> — amortized tool life cost per piece</li>
+        <li><strong>Setup Cost</strong> — machine setup time × rate</li>
+        <li><strong>Overheads</strong> — machine depreciation, power, operator overhead</li>
+      </ol>
+
+      <h3>Machining Time Formula</h3>
+      <div class="formula-box">
+        For Lathe (turning):
+        Machining time = L / (f × N)
+        where L = length of cut (mm), f = feed (mm/rev), N = speed (rpm)
+
+        For Drilling:
+        Machining time = (L + approach) / (f × N)
+        approach = D / (2 × tan(θ)) where θ = drill point half-angle
+
+        Machining cost = Time × Rate per minute
+      </div>
+
+      <h3>Sheet Metal Shop Costing</h3>
+      <ul>
+        <li>Material cost: area of blank × thickness × density × cost per kg</li>
+        <li>Plus scrap allowance, die amortization, press time × rate</li>
+        <li>Sheet metal operations: blanking, punching, bending, drawing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SOLVED PROBLEMS ── -->
+  <section class="section" id="solved">
+    <h2 class="section-title">✏️ Solved Problems</h2>
+
+    <div class="solved-problem">
+      <div class="solved-problem-head">Problem 1 — Foundry Cost: Calculate total cost of CI casting</div>
+      <div class="solved-problem-body">
+        <p><strong>Given:</strong></p>
+        <ul>
+          <li>Component: CI cap, density = 7.2 g/cc</li>
+          <li>Cost of molten iron = Rs. 30 per kg</li>
+          <li>Process scrap = 17% of net weight</li>
+          <li>Process scrap return value = Rs. 5 per kg</li>
+          <li>Administrative overhead = Rs. 2 per kg of metal poured</li>
+        </ul>
+        <p><em>(Assume net volume of casting = 200 cc from drawing)</em></p>
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Net weight of casting:</strong><br>
+          Net weight = Volume × Density = 200 cc × 7.2 g/cc = 1440 g = <strong>1.44 kg</strong>
+        </div></div>
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Process scrap weight:</strong><br>
+          Scrap = 17% of 1.44 = 0.245 kg<br>
+          Total weight (gross) = 1.44 + 0.245 = <strong>1.685 kg</strong>
+        </div></div>
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Material cost:</strong><br>
+          Gross material cost = 1.685 × Rs. 30 = Rs. 50.55<br>
+          Scrap return = 0.245 × Rs. 5 = Rs. 1.225<br>
+          <strong>Net material cost = 50.55 − 1.225 = Rs. 49.33</strong>
+        </div></div>
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Overhead charges:</strong><br>
+          Admin overhead = 1.685 × Rs. 2 = Rs. 3.37
+        </div></div>
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Total cost = Rs. 49.33 + Rs. 3.37 = Rs. 52.70 per casting</strong>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="solved-problem">
+      <div class="solved-problem-head">Problem 2 — Foundry: 150 components upsetting a 20mm bar (Sep 2024 PYQ)</div>
+      <div class="solved-problem-body">
+        <p><strong>Given:</strong> 150 components (50 mm dia × 20 mm length head + 20 mm dia × 100 mm length shank), made by upsetting a 20 mm diameter bar. Density = 7.86 g/cc.</p>
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Net volume of one component:</strong><br>
+          Volume of head: π/4 × 50² × 20 = 39,270 mm³<br>
+          Volume of shank: π/4 × 20² × 100 = 31,416 mm³<br>
+          Net volume = 39,270 + 31,416 = <strong>70,686 mm³ = 70.686 cc</strong>
+        </div></div>
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Net weight of one component:</strong><br>
+          Net weight = 70.686 × 7.86 g/cc = <strong>555.6 g = 0.556 kg</strong>
+        </div></div>
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Total net weight for 150 components:</strong><br>
+          150 × 0.556 = <strong>83.4 kg</strong>
+        </div></div>
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Length of 20mm bar required per component:</strong><br>
+          Volume of bar needed = Net volume (conservation of volume in forging)<br>
+          = 70,686 mm³<br>
+          Length = 70,686 / (π/4 × 20²) = 70,686 / 314.16 = <strong>225 mm per component</strong>
+        </div></div>
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Gross weight of 20mm bar:</strong><br>
+          Volume per bar = 70,686 mm³<br>
+          Gross weight per component = 70,686 mm³ × 7.86×10⁻³ g/mm³ = 555.6 g<br>
+          Total for 150 parts = 150 × 555.6 g = 83,340 g = <strong>83.34 kg</strong>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PYQ ── -->
+  <section class="section" id="pyq">
+    <h2 class="section-title">📝 PYQ — Module 4 Questions</h2>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.g)</span><span class="pyq-q">Draw the symbols used to represent flow control valve in hydraulic circuits.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L1</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Flow control valve (restrictor) symbol: a rectangle with a diagonal arrow through it (indicating adjustability). Restrictor with check valve has an additional check valve symbol in parallel allowing free flow one way. See JIC symbols diagram above.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.h)</span><span class="pyq-q">What are the various cost components associated with an arc welding process?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L1</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Cost components of arc welding:</p>
+        <ol>
+          <li>Direct material cost (base material + electrode/filler)</li>
+          <li>Direct labour cost (preparation + welding arc-on time + finishing)</li>
+          <li>Direct other expenses (power consumed, fixture cost)</li>
+          <li>Overheads (supervisory, lighting, depreciation)</li>
+        </ol>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (VIII)</span><span class="pyq-q">150 components (50 mm dia × 20 mm + 20 mm dia × 100 mm) made by upsetting a 20mm bar. Calculate net weight, gross weight, and length of bar required. Density = 7.86 g/cc.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Solved Problem 2</strong> above for complete step-by-step solution.</p>
+        <p><strong>Answers:</strong> Net weight per component = 0.556 kg, Total net weight = 83.4 kg, Length of bar per component = 225 mm.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (IX)</span><span class="pyq-q">Explain Hydraulic drilling machine with a neat circuit diagram.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Drilling Machine Circuit</strong> section above. Draw circuit with: pump → relief valve → 4/3 DCV → flow control valve → hydraulic motor (for spindle) + feed cylinder. Explain working: motor drives spindle, flow control valve sets feed rate, DCV controls drill advance and retract.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.g)</span><span class="pyq-q">Differentiate between cutaway circuit diagrams and schematic circuit diagrams. Why are schematic circuit diagrams preferred for hydraulic circuits?</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See the <strong>Cutaway vs. Schematic comparison table</strong> under Hydraulics Introduction. Schematic preferred because: standardized JIC symbols make circuit readable by all engineers, easily shows fluid flow paths, simpler to draw, easier to troubleshoot and modify.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.h)</span><span class="pyq-q">Describe estimation and costing in a sheet metal shop.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>Sheet metal shop costing includes: Material cost (blank area × thickness × density × material rate + scrap allowance), Labour cost (press operation time × rate), Direct expenses (die amortization, power for press), Overheads (press depreciation, supervision). For blanking/punching, die life determines amortization per piece.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (VIII)</span><span class="pyq-q">Explain with a numerical example how estimation and costing is done in a foundry shop.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Foundry Cost section and Solved Problem 1</strong> above. Include the cost estimation formula chain: net weight → gross weight → material cost → labour cost → overheads → total cost. Present a complete worked numerical example.</p>
+      </div></details>
+    </div>
+
+    <div class="pyq-card">
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (IX)</span><span class="pyq-q">Draw a neat circuit diagram and explain the working of hydraulic circuit of shaper machine.</span></div>
+      <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L2</span></div>
+      <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>See <strong>Shaper Machine Circuit section</strong> above. Reproduce the diagram and explain: pump → relief valve → 4/3 DCV → double-acting cylinder. Forward stroke (cutting): oil to right (full bore) side, piston moves left. Return stroke: oil to rod side, piston moves right. Quick return due to smaller rod-side area — automatic speed difference.</p>
+      </div></details>
+    </div>
+  </section>
+</main>
+</div>
+
+<footer>
+  <p>ME 19-205-0806 Production Technology &nbsp;|&nbsp; Module 4: Hydraulics &amp; Cost Estimation &nbsp;|&nbsp; Prof. Jinu (JNM)</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
