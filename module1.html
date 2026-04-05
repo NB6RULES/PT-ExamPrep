@@ -527,13 +527,28 @@
   <section class="section" id="pyq">
     <h2 class="section-title">📝 PYQ — Module 1 Questions</h2>
 
+    <!-- ─ Apr 2024 Part A ─ -->
     <div class="pyq-card">
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.a)</span><span class="pyq-q">Explain briefly the term progression ratio.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>Progression ratio (φ) is the ratio between two adjacent spindle speeds when speeds are arranged in geometric progression.</p>
-        <div class="formula-box">φ = N₂/N₁ = N₃/N₂ = ... = (Nmax/Nmin)^(1/(n-1))</div>
-        <p>It ensures uniform speed loss across the range and minimum number of gears.</p>
+        <p><strong>Progression Ratio (φ)</strong> is the constant ratio between two consecutive spindle speeds when the speeds are arranged in Geometric Progression (GP).</p>
+        <div class="formula-box">φ = N₂/N₁ = N₃/N₂ = N₄/N₃ = ... = constant
+
+φ = (N_max / N_min)^(1/(n−1))
+
+where:
+  N_max = maximum spindle speed (rpm)
+  N_min = minimum spindle speed (rpm)
+  n     = total number of speed steps</div>
+        <p><strong>Why GP is preferred:</strong></p>
+        <ul>
+          <li>Speed loss (= desired speed − available speed) is minimum and uniform across all speed steps.</li>
+          <li>Requires minimum number of gears for a given speed range.</li>
+          <li>Productivity (metal removal rate) remains nearly constant across the entire speed range.</li>
+          <li>Spindle speeds can be directly selected from standard preferred number series (R5, R10, R20, R40).</li>
+        </ul>
+        <p><strong>Permissible deviation:</strong> ±10% from the calculated step ratio is acceptable.</p>
       </div></details>
     </div>
 
@@ -541,21 +556,96 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.b)</span><span class="pyq-q">What are the requirements of a speed gear box?</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L1</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
+        <p>A speed gear box must satisfy the following requirements:</p>
         <ul>
-          <li>Must provide the designed series of spindle speeds.</li>
-          <li>Must transmit the required power to the spindle.</li>
-          <li>Smooth, silent operation.</li>
-          <li>Simple construction and easy maintenance access.</li>
+          <li><strong>Speed range:</strong> Must provide the designed series of spindle speeds (all required speed steps).</li>
+          <li><strong>Power transmission:</strong> Must transmit the required amount of power to the spindle without failure.</li>
+          <li><strong>Smooth operation:</strong> Must provide smooth and silent operation of the transmission mechanism at all speeds.</li>
+          <li><strong>Simple construction:</strong> The gear box should have a simple, compact design to reduce manufacturing cost.</li>
+          <li><strong>Maintenance:</strong> The mechanism should be easily accessible so that preventive maintenance can be carried out conveniently.</li>
+          <li><strong>Efficiency:</strong> Minimum power loss due to friction in gear meshes and bearings.</li>
+          <li><strong>Rigidity:</strong> Sufficient rigidity to resist deflection under cutting loads.</li>
         </ul>
       </div></details>
     </div>
 
+    <!-- ─ Apr 2024 Part B ─ -->
     <div class="pyq-card">
-      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (II)</span><span class="pyq-q">The minimum and maximum speed of a 6(3×2) speed gear box to transmit 10 HP are 600 and 1600 rpm. Construct the ray diagram and calculate the shaft sizes.</span></div>
+      <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (II)</span><span class="pyq-q">The minimum and maximum speed of a 6(3×2) speed gear box to transmit 10 HP are 600 and 1600 rpm. Construct the ray diagram and calculate the shaft sizes. Assume other parameters.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See Solved Problem 3 above for full step-by-step solution.</p>
-        <p><strong>Answer summary:</strong> φ = 1.217, Speeds = 600, 730, 888, 1080, 1315, 1600 rpm. Shaft diameter ≈ 25 mm at the input shaft. Draw 3-shaft ray diagram with 3 rays in Stage 1, 2 rays in Stage 2.</p>
+        <p><strong>Given:</strong></p>
+        <div class="formula-box">No. of speeds  n     = 6
+Structural formula    = 3(1) × 2(3)  [3×2 arrangement]
+N_min                 = 600 rpm
+N_max                 = 1600 rpm
+Power                 = 10 HP = 7460 W
+τ_allowable (steel)   = 55 N/mm²  (assumed)</div>
+
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Progression Ratio (φ):</strong><br>
+          φ = (N_max / N_min)^(1/(n−1))<br>
+          φ = (1600 / 600)^(1/(6−1))<br>
+          φ = (2.667)^(0.2)<br>
+          <strong>φ = 1.217</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Six spindle speeds:</strong><br>
+          N₁ = 600 rpm<br>
+          N₂ = 600 × 1.217 = <strong>730 rpm</strong><br>
+          N₃ = 600 × 1.217² = 600 × 1.481 = <strong>888 rpm</strong><br>
+          N₄ = 600 × 1.217³ = 600 × 1.803 = <strong>1082 rpm</strong><br>
+          N₅ = 600 × 1.217⁴ = 600 × 2.194 = <strong>1316 rpm</strong><br>
+          N₆ = 600 × 1.217⁵ = 600 × 2.670 = <strong>1600 rpm</strong> ✓
+        </div></div>
+
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Structural formula &amp; transmission ratios:</strong><br>
+          Formula: 3(1) × 2(3) → Stage 1 has 3 gear pairs; Stage 2 has 2 gear pairs<br>
+          Stage 1 transmission ratios (shaft I → II):<br>
+          &nbsp;&nbsp;i₁ = φ⁰ = 1 (direct drive) → Shaft II speed = input speed<br>
+          &nbsp;&nbsp;i₂ = φ⁻¹ = 1/1.217 = 0.822 → speed reduced by φ<br>
+          &nbsp;&nbsp;i₃ = φ⁻² = 1/1.481 = 0.675 → speed reduced by φ²<br>
+          Stage 2 transmission ratios (shaft II → III, characteristic = 3):<br>
+          &nbsp;&nbsp;i₄ = φ⁰ = 1 (direct)<br>
+          &nbsp;&nbsp;i₅ = φ⁻³ = 1/1.803 = 0.555 → speed reduced by φ³
+        </div></div>
+
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Ray diagram construction:</strong><br>
+          — Draw 3 vertical shaft lines (Shaft I, II, III)<br>
+          — Mark 6 speed levels on log scale: 600, 730, 888, 1082, 1316, 1600 rpm<br>
+          — Input shaft (I): single speed point (say at 1316 rpm = N₅)<br>
+          — From shaft I, draw 3 rays to shaft II giving speeds at 600, 730, 888 (Stage 1)<br>
+          — From each shaft II point, draw 2 rays to shaft III (Stage 2)<br>
+          — Shaft III carries all 6 output speeds
+        </div></div>
+
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Maximum torque (at lowest speed, shaft III):</strong><br>
+          P = 7460 W,  N = 600 rpm<br>
+          ω = 2π × 600 / 60 = 62.83 rad/s<br>
+          T_max = P / ω = 7460 / 62.83<br>
+          <strong>T_max = 118.7 N·m</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">6</span><div>
+          <strong>Shaft diameter (output shaft III):</strong><br>
+          Using torsion formula: d = (16 × T / π × τ)^(1/3)<br>
+          d = (16 × 118,700 / π × 55)^(1/3)<br>
+          d = (1,899,200 / 172.79)^(1/3)<br>
+          d = (10,993)^(1/3)<br>
+          d = 22.2 mm<br>
+          <strong>Select standard shaft diameter = 25 mm</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">7</span><div>
+          <strong>Input shaft diameter (shaft I at N₅ = 1316 rpm):</strong><br>
+          T_input = P / ω = 7460 / (2π × 1316/60) = 7460 / 137.8 = 54.1 N·m<br>
+          d = (16 × 54,100 / π × 55)^(1/3) = (5,012)^(1/3) = 17.1 mm<br>
+          <strong>Select standard shaft diameter = 20 mm</strong>
+        </div></div>
       </div></details>
     </div>
 
@@ -563,15 +653,80 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (III)</span><span class="pyq-q">Explain speed mechanism in lathe.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Speed Mechanism in Lathe</strong> section above. Include: motor → countershaft → headstock gear box → spindle, back gear arrangement, and Norton gear box for feed mechanism.</p>
+        <h4>Speed Mechanism in a Lathe</h4>
+        <p>The speed mechanism in a lathe transmits power from the electric motor to the spindle at different speeds to suit different workpiece materials, diameters, and operations.</p>
+
+        <h4>Power Flow Path</h4>
+        <div class="formula-box">Electric Motor → V-belt → Countershaft (constant speed) → Headstock gear box → Spindle</div>
+
+        <h4>1. Motor and Belt Drive</h4>
+        <ul>
+          <li>An electric motor (usually 3-phase induction motor) provides the primary power.</li>
+          <li>Power is transmitted through a V-belt drive to the countershaft, which rotates at a constant speed.</li>
+          <li>The V-belt provides slip protection and dampens vibrations.</li>
+        </ul>
+
+        <h4>2. Countershaft (Intermediate Shaft)</h4>
+        <ul>
+          <li>Rotates at constant speed (driven by motor via V-belt).</li>
+          <li>Carries a step pulley or a single pulley depending on lathe type.</li>
+          <li>In older lathes: a cone/step pulley on countershaft meshes with a cone pulley on headstock to give 3–4 speeds.</li>
+        </ul>
+
+        <h4>3. Headstock Gear Box</h4>
+        <ul>
+          <li>Contains multiple sliding gear clusters mounted on splined shafts.</li>
+          <li>By shifting gear clusters using levers, different gear combinations are engaged.</li>
+          <li>Provides a wide range of spindle speeds (typically 8 to 24 steps in geometric progression).</li>
+          <li>All shafts are supported in anti-friction bearings.</li>
+        </ul>
+
+        <h4>4. Back Gear Arrangement</h4>
+        <ul>
+          <li>Provides extra-low speed range for heavy-duty operations (threading, boring large diameters).</li>
+          <li>Consists of two back gears on a shaft parallel to the spindle.</li>
+          <li>When back gear is engaged: drive passes through back gears before reaching spindle → much lower speed and higher torque.</li>
+          <li>When back gear is disengaged: direct drive from cone pulley to spindle → higher speeds for light cuts.</li>
+          <li>Doubles the number of available speeds (e.g., 8 direct + 8 back-gear = 16 speeds).</li>
+        </ul>
+
+        <h4>5. Feed Mechanism — Norton (Tumbler) Gear Box</h4>
+        <ul>
+          <li>The spindle drives the feed shaft through a tumbler gear (reversing mechanism) and Norton gear box.</li>
+          <li>The Norton gear box is a quick-change gear box containing a cone of gears.</li>
+          <li>A sliding key engages one gear in the cone at a time, giving different feed rates and thread pitches.</li>
+          <li>The selected gear drives the lead screw (for threading) or feed rod (for turning/facing feeds).</li>
+        </ul>
+
+        <h4>6. Spindle</h4>
+        <ul>
+          <li>The spindle is the final output shaft — it carries and rotates the workpiece (via chuck, face plate, or between centres).</li>
+          <li>Made of alloy steel; supported in precision taper roller or angular contact bearings.</li>
+          <li>Has a Morse taper bore at the front for mounting centres and collets.</li>
+        </ul>
+
+        <div class="callout callout-tip">
+          <strong>Key Point for Exam</strong>
+          In an all-geared headstock lathe, the V-belt drive to the headstock is replaced by a geared drive directly from the motor, giving positive, slip-free transmission and a wider speed range without belt maintenance issues.
+        </div>
       </div></details>
     </div>
 
+    <!-- ─ Sep 2024 Part A ─ -->
     <div class="pyq-card">
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.a)</span><span class="pyq-q">Briefly explain ray diagrams.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>A ray diagram is a graphical representation of the drive arrangement in general form. Vertical lines represent shafts, horizontal lines represent speeds on a log scale. Slanted lines (rays) represent gear pairs connecting speeds on adjacent shafts. The slope of each ray indicates the transmission ratio.</p>
+        <p>A <strong>ray diagram</strong> (also called a speed chart or kinematic diagram) is a graphical representation of the drive arrangement of a machine tool gear box that shows the specific values of all transmission ratios and speeds at every shaft stage.</p>
+        <p><strong>Construction:</strong></p>
+        <ul>
+          <li>Vertical lines represent the shafts (input shaft on left, output shaft on right).</li>
+          <li>Horizontal lines represent speed values on a <strong>logarithmic scale</strong> — equal spacing because speeds are in geometric progression.</li>
+          <li>Slanted lines (rays) connect speed points on adjacent shafts, representing individual gear pairs.</li>
+          <li>The <strong>slope</strong> of each ray indicates the transmission ratio of that gear pair.</li>
+          <li>A ray slanting upward = speed increase (step-up); slanting downward = speed decrease (step-down); horizontal = 1:1 ratio.</li>
+        </ul>
+        <p><strong>Purpose:</strong> To graphically verify the structural formula, find exact transmission ratios, and confirm that all required speeds are achieved within permissible limits.</p>
       </div></details>
     </div>
 
@@ -579,15 +734,109 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.b)</span><span class="pyq-q">Describe stepped and stepless regulation of speeds.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L1</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Stepped vs. Stepless Speed Regulation</strong> comparison table above.</p>
+        <p><strong>Stepped Speed Regulation:</strong></p>
+        <ul>
+          <li>Speed is varied in discrete steps — only a finite number of fixed speeds are available.</li>
+          <li>Achieved using gear boxes (sliding mesh, constant mesh), step pulleys, or cone pulleys.</li>
+          <li>Speeds are arranged in geometric progression using a standard step ratio (φ).</li>
+          <li>Advantages: high efficiency, positive (slip-free) drive, low cost, simple construction.</li>
+          <li>Disadvantage: exact desired cutting speed may not be available; only the nearest step can be selected.</li>
+          <li>Applications: most conventional machine tools — lathes, milling machines, drilling machines.</li>
+        </ul>
+        <p><strong>Stepless Speed Regulation:</strong></p>
+        <ul>
+          <li>Speed can be varied continuously and infinitely within a range — any desired speed is achievable.</li>
+          <li>Achieved using: Variable Speed Drives (VSD), PIV (Positive Infinitely Variable) drives, hydraulic drives, DC/AC variable frequency motors, CVT (Continuously Variable Transmission).</li>
+          <li>Advantages: exact optimum cutting speed always available; smooth transition; higher productivity.</li>
+          <li>Disadvantages: higher cost, more complex mechanism, slightly lower efficiency.</li>
+          <li>Applications: CNC machines, heavy-duty machines, precision grinding, thread milling.</li>
+        </ul>
       </div></details>
     </div>
 
+    <!-- ─ Sep 2024 Part B ─ -->
     <div class="pyq-card">
-      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (II)</span><span class="pyq-q">Design a 6-speed gearbox (2×3), common ratio = 1.2, input shaft speed = 300 rpm, motor speed = 1500 rpm, Power = 16 HP.</span></div>
+      <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (II)</span><span class="pyq-q">Design a 6-speed gearbox (2×3): common ratio φ = 1.2, input shaft speed = 300 rpm, motor speed = 1500 rpm, Power = 16 HP. Assume all other parameters.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L4</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See Solved Problem 2 above for complete solution.</p>
+        <p><strong>Given:</strong></p>
+        <div class="formula-box">No. of speeds     n       = 6
+Structural formula        = 2(1) × 3(2)
+Common ratio      φ       = 1.2
+Input shaft speed N_input = 300 rpm
+Motor speed               = 1500 rpm
+Power             P       = 16 HP = 16 × 746 = 11,936 W ≈ 11.94 kW
+τ_allowable               = 55 N/mm² (assumed for steel shaft)</div>
+
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Speed reduction from motor to input shaft:</strong><br>
+          Reduction ratio = N_motor / N_input = 1500 / 300 = 5<br>
+          This is achieved through the belt/gear drive before the gear box.
+        </div></div>
+
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Six output speeds (starting from input = 300 rpm, φ = 1.2):</strong><br>
+          N₁ = 300 rpm<br>
+          N₂ = 300 × 1.2 = <strong>360 rpm</strong><br>
+          N₃ = 300 × 1.2² = 300 × 1.44 = <strong>432 rpm</strong><br>
+          N₄ = 300 × 1.2³ = 300 × 1.728 = <strong>518 rpm</strong><br>
+          N₅ = 300 × 1.2⁴ = 300 × 2.0736 = <strong>622 rpm</strong><br>
+          N₆ = 300 × 1.2⁵ = 300 × 2.4883 = <strong>746 rpm</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Structural arrangement — 2(1) × 3(2):</strong><br>
+          Stage 1: P₁ = 2 gear pairs, Characteristic X₁ = 1<br>
+          Stage 2: P₂ = 3 gear pairs, Characteristic X₂ = P₁ × X₁ = 2 × 1 = 2<br>
+          Total speeds = P₁ × P₂ = 2 × 3 = 6 ✓<br>
+          Number of shafts = 3 (input shaft I, intermediate shaft II, output shaft III)
+        </div></div>
+
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Transmission ratios — Stage 1 (shaft I → II, 2 gear pairs):</strong><br>
+          i₁ = 1 (direct — horizontal ray)<br>
+          i₂ = φ⁻² = 1/1.44 = 0.694 (step-down by φ²)
+        </div></div>
+
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Transmission ratios — Stage 2 (shaft II → III, 3 gear pairs, characteristic = 2):</strong><br>
+          i₃ = 1 (direct — horizontal ray)<br>
+          i₄ = φ⁻² = 1/1.44 = 0.694 (step-down by φ²)<br>
+          i₅ = φ⁻⁴ = 1/2.0736 = 0.482 (step-down by φ⁴)
+        </div></div>
+
+        <div class="step"><span class="step-num">6</span><div>
+          <strong>Ray diagram — how to draw:</strong><br>
+          — Draw 3 vertical lines: Shaft I (input), Shaft II, Shaft III (output)<br>
+          — Mark speed levels on log scale: 300, 360, 432, 518, 622, 746 rpm<br>
+          — Input shaft I: single point at 300 rpm<br>
+          — Stage 1: 2 rays from shaft I to shaft II → speeds 300, 208 (=300×0.694) on shaft II<br>
+          — Stage 2: 3 rays from each shaft II point → 6 output speeds on shaft III
+        </div></div>
+
+        <div class="step"><span class="step-num">7</span><div>
+          <strong>Maximum torque (at output shaft at N₁ = 300 rpm):</strong><br>
+          ω = 2π × 300 / 60 = 31.42 rad/s<br>
+          T_max = P / ω = 11,936 / 31.42<br>
+          <strong>T_max = 379.6 N·m</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">8</span><div>
+          <strong>Output shaft diameter:</strong><br>
+          d = (16 × T / π × τ)^(1/3)<br>
+          d = (16 × 379,600 / π × 55)^(1/3)<br>
+          d = (6,073,600 / 172.79)^(1/3)<br>
+          d = (35,152)^(1/3)<br>
+          d = 32.8 mm<br>
+          <strong>Select standard diameter = 35 mm</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">9</span><div>
+          <strong>Input shaft diameter (at motor side, N = 1500 rpm):</strong><br>
+          T_input = 11,936 / (2π × 1500/60) = 11,936 / 157.08 = 76.0 N·m<br>
+          d = (16 × 76,000 / π × 55)^(1/3) = (1,216,000 / 172.79)^(1/3) = (7,038)^(1/3) = 19.1 mm<br>
+          <strong>Select standard diameter = 20 mm</strong>
+        </div></div>
       </div></details>
     </div>
 
@@ -595,7 +844,53 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (III)</span><span class="pyq-q">Explain the feed and speed mechanisms in milling machine with neat sketches.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO1</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Speed Mechanism in Milling Machine</strong> section above. Include: multi-speed gear box for spindle, independent feed gear box, overarm, arbor support. Sketch should show motor → belt → spindle gear box, and separate feed motor → feed gear box → table drives (longitudinal, transverse, vertical).</p>
+        <h4>Speed and Feed Mechanisms in a Milling Machine</h4>
+        <p>A milling machine has two independent mechanisms: (1) the <strong>speed mechanism</strong> which drives the spindle (cutter), and (2) the <strong>feed mechanism</strong> which drives the workpiece table.</p>
+
+        <h4>1. Speed Mechanism</h4>
+        <p><strong>Power flow:</strong></p>
+        <div class="formula-box">Electric Motor → V-belt/coupling → Speed Gear Box → Spindle</div>
+        <ul>
+          <li>The speed gear box provides 8 to 18 spindle speeds in geometric progression.</li>
+          <li>Speeds are selected by shifting gear clusters using levers or handles on the gear box.</li>
+          <li>The spindle carries the arbor and milling cutter (in horizontal milling) or collet/tool (in vertical milling).</li>
+          <li>Spindle is supported in precision taper roller bearings to handle radial and axial cutting forces.</li>
+          <li>In a universal milling machine, the spindle can also be tilted at an angle.</li>
+          <li><strong>Overarm:</strong> Supports the far end of the arbor in horizontal milling machines to prevent deflection.</li>
+        </ul>
+
+        <h4>2. Feed Mechanism</h4>
+        <p><strong>Power flow:</strong></p>
+        <div class="formula-box">Spindle (or separate feed motor) → Feed Gear Box → Bevel gear set → Feed clutches → Table drives</div>
+        <ul>
+          <li>The feed gear box provides multiple feed rates for the three table axes: <strong>longitudinal, cross (transverse), and vertical</strong>.</li>
+          <li>Only one feed direction is engaged at a time using feed clutches.</li>
+          <li>Feed rates are selected independently of spindle speed — they are controlled by separate levers on the feed gear box.</li>
+          <li>Feeds are expressed in mm/min (or mm/tooth for precision work).</li>
+          <li>The table is driven by lead screws (horizontal axes) and elevating screw (vertical axis).</li>
+        </ul>
+
+        <h4>3. Rapid Traverse</h4>
+        <ul>
+          <li>A separate rapid traverse motor (or clutch bypass) drives the table at high speed for positioning, bypassing the feed gear box.</li>
+          <li>This saves time during non-cutting movements.</li>
+        </ul>
+
+        <h4>4. Difference between Speed and Feed Drives</h4>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Speed Drive (Spindle)</th><th>Feed Drive (Table)</th></tr></thead>
+          <tbody>
+            <tr><td>Drives the milling cutter</td><td>Drives the workpiece table</td></tr>
+            <tr><td>Higher speed range (rpm)</td><td>Lower rate (mm/min)</td></tr>
+            <tr><td>Controlled by speed gear box levers</td><td>Controlled by feed gear box levers</td></tr>
+            <tr><td>Always running during machining</td><td>One axis active at a time</td></tr>
+          </tbody>
+        </table></div>
+
+        <div class="callout callout-tip">
+          <strong>Exam Sketch</strong>
+          Draw the milling machine showing: Motor on column → speed gear box inside column → horizontal spindle with arbor and cutter. Separately show: feed motor → feed gear box → longitudinal lead screw (table X-axis), cross lead screw (Y-axis), vertical elevating screw (Z-axis).
+        </div>
       </div></details>
     </div>
   </section>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Production Technology</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.resource-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.resource-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+.resource-icon { font-size: 2rem; }
+.resource-title { font-weight: 700; font-size: 1rem; color: var(--text); }
+.resource-desc { font-size: 0.85rem; color: var(--text-muted); flex: 1; }
+.resource-meta { font-size: 0.78rem; color: var(--text-muted); }
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+.download-btn:hover { opacity: 0.85; }
+.btn-blue { background: #3b82f6; color: white; }
+.btn-orange { background: #f97316; color: white; }
+.btn-green { background: #22c55e; color: white; }
+.btn-purple { background: #8b5cf6; color: white; }
+.btn-red { background: #ef4444; color: white; }
+.btn-gray { background: #64748b; color: white; }
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+.syllabus-img-wrap {
+  margin-top: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.syllabus-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <div class="topnav-brand">⚙️ Production Technology</div>
+  <div class="topnav-links">
+    <a href="index.html">Home</a>
+    <a href="module1.html">Module 1</a>
+    <a href="module2.html">Module 2</a>
+    <a href="module3.html">Module 3</a>
+    <a href="module4.html">Module 4</a>
+    <a href="pyq.html">PYQ</a>
+    <a href="resources.html" class="active">Resources</a>
+  </div>
+  <button class="theme-btn" id="theme-btn">🌙</button>
+</nav>
+
+<main style="max-width:1100px; margin:0 auto; padding:2rem 1.5rem;">
+  <a href="index.html" class="back-btn">← Back to Home</a>
+
+  <div class="page-header" style="margin-top:1.5rem;">
+    <h1>📚 Study Resources</h1>
+    <p>All lecture notes, reference PDFs, and syllabus for ME 19-205-0806 Production Technology (2019 Scheme). Prof. Pramod (PRK) — Modules 1 &amp; 2 · Prof. Jinu (JNM) — Modules 3 &amp; 4.</p>
+  </div>
+
+  <!-- Syllabus -->
+  <div class="section-label">Syllabus</div>
+  <div class="resource-card" style="max-width: 420px;">
+    <div class="resource-icon">🗂️</div>
+    <div class="resource-title">Course Syllabus</div>
+    <div class="resource-desc">ME 19-205-0806 Production Technology — 2019 Scheme, VIII Semester. Covers all 4 modules with CO mapping and mark distribution.</div>
+    <a href="syllabus.webp" target="_blank" class="download-btn btn-gray">🔎 View Syllabus</a>
+  </div>
+  <div class="syllabus-img-wrap" style="max-width: 860px;">
+    <img src="syllabus.webp" alt="Production Technology Syllabus 2019 Scheme">
+  </div>
+
+  <!-- PRK Notes -->
+  <div class="section-label">Prof. Pramod (PRK) — Module 1 &amp; 2 Notes</div>
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="resource-icon">📘</div>
+      <div class="resource-title">PT Module 1 — Kinematics of Machine Tools</div>
+      <div class="resource-desc">Types of motion, speed/feed selection, stepped regulation, progression ratio, preferred numbers (R5–R80), gear box design basics.</div>
+      <div class="resource-meta">PRK · 37 pages</div>
+      <a href="PRK/PT Module 1.pdf" target="_blank" class="download-btn btn-blue">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">📐</div>
+      <div class="resource-title">Ray Diagrams</div>
+      <div class="resource-desc">Geometric progression, step ratio, ray diagram construction rules, structural formula derivation, solved problems for 6/9/12-speed gear boxes.</div>
+      <div class="resource-meta">PRK · 18 pages</div>
+      <a href="PRK/Ray Diagrams.pdf" target="_blank" class="download-btn btn-blue">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">⚡</div>
+      <div class="resource-title">Module 2 — Non-Traditional Machining</div>
+      <div class="resource-desc">Full NTM reference: AJM (MRR model, process parameters), USM (M.C. Shaw model), WJM, classification, comparison tables.</div>
+      <div class="resource-meta">PRK · 57 pages</div>
+      <a href="PRK/Module 2.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">🔥</div>
+      <div class="resource-title">Electric Discharge Machining (EDM)</div>
+      <div class="resource-desc">EDM working principle, dielectric fluids, spark generators (RC circuit and transistorized), process parameters, MRR formula, applications.</div>
+      <div class="resource-meta">PRK · 10 pages (image-based)</div>
+      <a href="PRK/Electric Discharge Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">🌊</div>
+      <div class="resource-title">Ultra Sonic Machining (USM)</div>
+      <div class="resource-desc">USM principle, setup components, M.C. Shaw model, factors affecting MRR, transducer materials, applications.</div>
+      <div class="resource-meta">PRK · 9 pages (image-based)</div>
+      <a href="PRK/Ultra Sonic Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">🔬</div>
+      <div class="resource-title">Electron Beam Machining (EBM)</div>
+      <div class="resource-desc">EBM principle, electron gun, vacuum requirement, beam focusing, process parameters, advantages and applications.</div>
+      <div class="resource-meta">PRK · 5 pages (image-based)</div>
+      <a href="PRK/Electron Beam Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">💡</div>
+      <div class="resource-title">Laser Beam Machining (LBM)</div>
+      <div class="resource-desc">LBM principle, types of lasers (Ruby, CO₂, Nd:YAG), beam focusing, process parameters, LBM vs EBM comparison.</div>
+      <div class="resource-meta">PRK · 5 pages (image-based)</div>
+      <a href="PRK/Laser Beam Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">🌡️</div>
+      <div class="resource-title">Plasma Arc Machining (PAM)</div>
+      <div class="resource-desc">Plasma arc torch, transferred vs non-transferred arc, temperature (28,000°C), process parameters, applications for hard alloys.</div>
+      <div class="resource-meta">PRK · 4 pages (image-based)</div>
+      <a href="PRK/Plasma Arc Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">⚛️</div>
+      <div class="resource-title">Ion Beam Machining (IBM)</div>
+      <div class="resource-desc">IBM principle, ion source, ion beam characteristics, sputtering mechanism, applications in microfabrication and thin films.</div>
+      <div class="resource-meta">PRK · 3 pages (image-based)</div>
+      <a href="PRK/Iron Beam Machining.pdf" target="_blank" class="download-btn btn-orange">📥 Open PDF</a>
+    </div>
+  </div>
+
+  <!-- JNM Notes -->
+  <div class="section-label">Prof. Jinu (JNM) — Module 3 &amp; 4 Notes</div>
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="resource-icon">🧪</div>
+      <div class="resource-title">PT Module 3 — Powder Metallurgy</div>
+      <div class="resource-desc">Complete P/M coverage: powder production (atomization, electrolysis, reduction), characteristics (shape/size/flow/compressibility), mixing, compacting, sintering, secondary operations, applications.</div>
+      <div class="resource-meta">JNM · 37 pages</div>
+      <a href="JNM/PT MODULE 3.pdf" target="_blank" class="download-btn btn-green">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">🔧</div>
+      <div class="resource-title">Module 4 — Hydraulic Operations of Machine Tools</div>
+      <div class="resource-desc">JIC symbols, hydraulic valves (pressure/flow/direction control), circuits for shaper/drilling/grinding machines, pump and motor selection.</div>
+      <div class="resource-meta">JNM · 20 pages</div>
+      <a href="JNM/Module 4 Hydraulic operations of Machine Tools.pdf" target="_blank" class="download-btn btn-purple">📥 Open PDF</a>
+    </div>
+
+    <div class="resource-card">
+      <div class="resource-icon">💰</div>
+      <div class="resource-title">Production Cost Estimation</div>
+      <div class="resource-desc">Foundry shop costing (pattern/sand/mould/melting/fettling sections), welding shop costing, machine shop costing (lathe/milling/drilling/shaping), sheet metal shop costing — with solved numericals.</div>
+      <div class="resource-meta">JNM · 31 pages</div>
+      <a href="JNM/PRODUCTION COST ESTIMATION.pdf" target="_blank" class="download-btn btn-purple">📥 Open PDF</a>
+    </div>
+  </div>
+
+  <!-- Important Questions -->
+  <div class="section-label">Important Questions</div>
+  <div class="resource-card" style="max-width: 420px;">
+    <div class="resource-icon">📋</div>
+    <div class="resource-title">Important Questions — All Modules</div>
+    <div class="resource-desc">11 high-probability exam questions across all 4 modules as identified from PYQ analysis and syllabus focus areas.</div>
+    <a href="production_imp_qus.md" target="_blank" class="download-btn btn-red">📄 View Notes</a>
+  </div>
+
+  <!-- Quick access -->
+  <div class="section-label">Quick Access to Module Notes</div>
+  <div class="resources-grid">
+    <a href="module1.html" style="text-decoration:none;">
+      <div class="resource-card">
+        <div class="resource-icon">⚙️</div>
+        <div class="resource-title">Module 1 Study Notes</div>
+        <div class="resource-desc">Kinematics, ray diagrams, gear box design — with solved problems and PYQ answers.</div>
+        <span class="download-btn btn-blue" style="pointer-events:none;">→ Open Notes</span>
+      </div>
+    </a>
+    <a href="module2.html" style="text-decoration:none;">
+      <div class="resource-card">
+        <div class="resource-icon">⚡</div>
+        <div class="resource-title">Module 2 Study Notes</div>
+        <div class="resource-desc">EDM, ECM, AJM, USM, EBM, LBM, PAM, IBM — with diagrams and PYQ answers.</div>
+        <span class="download-btn btn-orange" style="pointer-events:none;">→ Open Notes</span>
+      </div>
+    </a>
+    <a href="module3.html" style="text-decoration:none;">
+      <div class="resource-card">
+        <div class="resource-icon">🧪</div>
+        <div class="resource-title">Module 3 Study Notes</div>
+        <div class="resource-desc">Powder metallurgy: atomization, compaction, sintering, self-lubricating bearings — with PYQ answers.</div>
+        <span class="download-btn btn-green" style="pointer-events:none;">→ Open Notes</span>
+      </div>
+    </a>
+    <a href="module4.html" style="text-decoration:none;">
+      <div class="resource-card">
+        <div class="resource-icon">🔧</div>
+        <div class="resource-title">Module 4 Study Notes</div>
+        <div class="resource-desc">Hydraulic circuits (shaper, drilling, grinding), cost estimation — with solved numericals and PYQ answers.</div>
+        <span class="download-btn btn-purple" style="pointer-events:none;">→ Open Notes</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>ME 19-205-0806 Production Technology &nbsp;|&nbsp; Resources &nbsp;|&nbsp; 2019 Scheme, VIII Semester</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

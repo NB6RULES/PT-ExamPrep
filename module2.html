@@ -575,7 +575,84 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (IV)</span><span class="pyq-q">Explain Electro Chemical Machining with a neat diagram. Explain the process parameters in ECM.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>ECM section</strong> above. Include diagram showing: workpiece (+), tool (−), electrolyte flow, power supply, and machining gap (0.05–1 mm). Explain anodic dissolution process, electrolyte types (NaCl/NaNO₃), voltage (5–30 V DC), current density (20–200 A/cm²).</p>
+        <h4>Electro Chemical Machining (ECM)</h4>
+        <p><strong>Principle:</strong> ECM is based on the principle of <em>anodic dissolution</em> — Faraday's laws of electrolysis. The workpiece acts as the <strong>anode (+)</strong> and the tool as the <strong>cathode (−)</strong>. When DC current flows through the electrolyte between them, material is removed from the workpiece by electrolytic dissolution at atomic level. The tool shape is reproduced as a mirror image on the workpiece.</p>
+
+        <svg viewBox="0 0 500 220" class="diagram-svg" aria-label="ECM Setup Diagram">
+          <rect x="0" y="0" width="500" height="220" fill="var(--bg-card)" rx="8"/>
+          <!-- Power supply -->
+          <rect x="190" y="10" width="120" height="40" rx="5" fill="#6366f1" opacity="0.8"/>
+          <text x="250" y="35" text-anchor="middle" fill="white" font-size="13" font-weight="bold">DC Power Supply</text>
+          <!-- Wires -->
+          <line x1="210" y1="50" x2="130" y2="80" stroke="red" stroke-width="2"/>
+          <line x1="290" y1="50" x2="370" y2="80" stroke="blue" stroke-width="2"/>
+          <text x="150" y="72" fill="red" font-size="11">+ (Anode)</text>
+          <text x="300" y="72" fill="blue" font-size="11">− (Cathode)</text>
+          <!-- Tool (cathode) -->
+          <rect x="320" y="80" width="80" height="50" rx="3" fill="#94a3b8"/>
+          <text x="360" y="110" text-anchor="middle" fill="white" font-size="12">TOOL</text>
+          <!-- Workpiece (anode) -->
+          <rect x="90" y="130" width="160" height="50" rx="3" fill="#f97316" opacity="0.7"/>
+          <text x="170" y="160" text-anchor="middle" fill="white" font-size="12">WORKPIECE</text>
+          <!-- Machining gap -->
+          <line x1="250" y1="130" x2="320" y2="130" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4"/>
+          <text x="285" y="125" text-anchor="middle" fill="#22c55e" font-size="10">Gap 0.05–1 mm</text>
+          <!-- Electrolyte -->
+          <rect x="90" y="80" width="230" height="50" rx="3" fill="#38bdf8" opacity="0.25"/>
+          <text x="205" y="110" text-anchor="middle" fill="#0284c7" font-size="11">Electrolyte flow (NaCl / NaNO₃)</text>
+          <!-- Arrow showing electrolyte flow -->
+          <line x1="60" y1="105" x2="90" y2="105" stroke="#0284c7" stroke-width="2" marker-end="url(#arr)"/>
+          <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0284c7"/></marker></defs>
+          <text x="30" y="100" fill="#0284c7" font-size="10">Flow in</text>
+          <text x="330" y="148" fill="#94a3b8" font-size="10">Feed ↓</text>
+        </svg>
+
+        <h4>Process Parameters in ECM</h4>
+        <table class="info-table">
+          <tr><th>Parameter</th><th>Range / Value</th><th>Effect</th></tr>
+          <tr><td>Voltage (V)</td><td>5–30 V DC</td><td>Higher V → faster MRR but risk of sparking</td></tr>
+          <tr><td>Current density</td><td>20–200 A/cm²</td><td>Directly proportional to MRR (Faraday's law)</td></tr>
+          <tr><td>Electrolyte type</td><td>NaCl, NaNO₃, NaClO₃</td><td>Determines conductivity and selectivity</td></tr>
+          <tr><td>Electrolyte flow rate</td><td>10–60 L/min</td><td>Removes sludge and maintains temperature</td></tr>
+          <tr><td>Machining gap</td><td>0.05–1 mm</td><td>Smaller gap → better accuracy</td></tr>
+          <tr><td>Feed rate</td><td>0.5–15 mm/min</td><td>Controlled by servo feed system</td></tr>
+          <tr><td>Electrolyte temperature</td><td>25–35°C</td><td>Higher temp → higher conductivity</td></tr>
+        </table>
+
+        <h4>Working of ECM</h4>
+        <ol>
+          <li>Workpiece (anode) and shaped tool (cathode) are set up with a small gap (0.05–1 mm)</li>
+          <li>Electrolyte (NaCl or NaNO₃ solution) is pumped through the gap at high velocity</li>
+          <li>DC voltage (5–30 V) applied — current density reaches 20–200 A/cm²</li>
+          <li>Metal ions are dissolved from the workpiece surface (anodic dissolution)</li>
+          <li>The dissolved metal reacts with the electrolyte to form metal hydroxide sludge — carried away by electrolyte flow</li>
+          <li>Tool is fed continuously towards the workpiece; the gap remains constant due to servo control</li>
+          <li>The tool shape is replicated as a cavity in the workpiece</li>
+        </ol>
+        <div class="formula-box">
+          MRR = (AI)/(nFρ)<br>
+          A = atomic weight, I = current (A), n = valency, F = Faraday's constant (96,500 C/mol), ρ = density
+        </div>
+        <h4>Advantages:</h4>
+        <ul>
+          <li>No tool wear (cathode does not dissolve)</li>
+          <li>No thermal stresses — process is electrochemical, not thermal</li>
+          <li>Complex shapes produced in one pass</li>
+          <li>Suitable for hard, tough alloys (Inconel, titanium, hardened steel)</li>
+        </ul>
+        <h4>Disadvantages:</h4>
+        <ul>
+          <li>High capital cost and maintenance</li>
+          <li>Not suitable for non-conducting materials</li>
+          <li>Disposal of electrolyte sludge is a concern</li>
+        </ul>
+        <h4>Applications:</h4>
+        <ul>
+          <li>Turbine blade profiling (aerospace)</li>
+          <li>Gun barrel rifling</li>
+          <li>Die and mould cavity sinking</li>
+          <li>Deburring of precision components</li>
+        </ul>
       </div></details>
     </div>
 
@@ -583,7 +660,70 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (V)</span><span class="pyq-q">Explain the working principle of ultrasonic machining with a neat diagram. Explain the various factors influencing the material removal rate.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>USM section</strong> above. Include the USM diagram. Explain M.C. Shaw's model. List all factors affecting MRR from the table above: frequency, amplitude, feed force, grain size, slurry concentration, workpiece/tool material.</p>
+        <h4>Ultrasonic Machining (USM) — Working Principle</h4>
+        <p>USM removes material from a brittle workpiece by the abrasive action of fine abrasive particles suspended in a liquid slurry. The tool is vibrated at ultrasonic frequency (20–40 kHz) with a small amplitude (25–100 μm) perpendicular to the workpiece surface. The vibrating tool hammers the abrasive grains, which in turn impact the workpiece causing micro-fractures and material removal by brittle fracture.</p>
+
+        <svg viewBox="0 0 480 240" class="diagram-svg" aria-label="USM Setup">
+          <rect x="0" y="0" width="480" height="240" fill="var(--bg-card)" rx="8"/>
+          <!-- Transducer -->
+          <rect x="180" y="10" width="120" height="35" rx="4" fill="#6366f1" opacity="0.8"/>
+          <text x="240" y="32" text-anchor="middle" fill="white" font-size="12">Ultrasonic Transducer</text>
+          <!-- Concentrator (horn) -->
+          <polygon points="200,45 280,45 260,90 220,90" fill="#94a3b8"/>
+          <text x="240" y="72" text-anchor="middle" fill="white" font-size="11">Concentrator</text>
+          <!-- Tool -->
+          <rect x="215" y="90" width="50" height="55" rx="2" fill="#f97316" opacity="0.8"/>
+          <text x="240" y="122" text-anchor="middle" fill="white" font-size="12">Tool</text>
+          <!-- Slurry -->
+          <rect x="150" y="145" width="180" height="20" rx="3" fill="#38bdf8" opacity="0.4"/>
+          <text x="240" y="160" text-anchor="middle" fill="#0284c7" font-size="10">Abrasive Slurry (Al₂O₃/B₄C in water)</text>
+          <!-- Workpiece -->
+          <rect x="150" y="165" width="180" height="45" rx="3" fill="#22c55e" opacity="0.5"/>
+          <text x="240" y="192" text-anchor="middle" fill="white" font-size="12">Workpiece (brittle)</text>
+          <!-- Vibration arrow -->
+          <text x="290" y="115" fill="#6366f1" font-size="22" font-weight="bold">↕</text>
+          <text x="305" y="120" fill="#6366f1" font-size="10">20–40 kHz</text>
+          <!-- Feed force -->
+          <line x1="150" y1="118" x2="150" y2="135" stroke="#ef4444" stroke-width="2" marker-end="url(#arr2)"/>
+          <defs><marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/></marker></defs>
+          <text x="95" y="128" fill="#ef4444" font-size="10">Static feed force</text>
+        </svg>
+
+        <h4>M.C. Shaw's Model for MRR</h4>
+        <p>M.C. Shaw developed the following theoretical model for material removal rate in USM:</p>
+        <div class="formula-box">
+          MRR ∝ f · a · (d/D)^(1/2) · (H_w / H_t)^(3/4) · F<br><br>
+          where:<br>
+          f = vibration frequency<br>
+          a = amplitude of vibration<br>
+          d = mean abrasive grain diameter<br>
+          D = diameter of tool<br>
+          H_w = hardness of workpiece<br>
+          H_t = hardness of tool<br>
+          F = static feed force
+        </div>
+
+        <h4>Factors Influencing MRR in USM</h4>
+        <table class="info-table">
+          <tr><th>Factor</th><th>Effect on MRR</th></tr>
+          <tr><td>Frequency of vibration</td><td>MRR increases with frequency (up to 40 kHz optimal)</td></tr>
+          <tr><td>Amplitude of vibration</td><td>Higher amplitude → more impact energy → higher MRR</td></tr>
+          <tr><td>Static feed force</td><td>Optimal force exists; too low = insufficient hammering; too high = tool stalls</td></tr>
+          <tr><td>Abrasive grain size</td><td>Larger grains → higher MRR but rougher surface finish</td></tr>
+          <tr><td>Abrasive material</td><td>Harder abrasive (B₄C &gt; Al₂O₃ &gt; SiC) → higher MRR</td></tr>
+          <tr><td>Slurry concentration</td><td>Optimal at 30–40% by weight; too thick = clogging, too thin = insufficient abrasion</td></tr>
+          <tr><td>Slurry viscosity</td><td>Lower viscosity allows faster grain circulation; higher MRR</td></tr>
+          <tr><td>Workpiece hardness</td><td>Harder workpiece → lower MRR; brittle materials machine faster</td></tr>
+          <tr><td>Tool material</td><td>Ductile soft tool (steel, copper) — tool deforms rather than fractures</td></tr>
+        </table>
+
+        <h4>Applications of USM:</h4>
+        <ul>
+          <li>Machining glass, ceramics, silicon, quartz</li>
+          <li>Drilling non-circular holes</li>
+          <li>Engraving on hard brittle materials</li>
+          <li>Machining semiconductors and piezoelectric crystals</li>
+        </ul>
       </div></details>
     </div>
 
@@ -591,7 +731,16 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.c)</span><span class="pyq-q">What are non-traditional machining processes? List and classify.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Introduction &amp; Classification</strong> sections above. List classification by energy source: Mechanical (USM, AJM, WJM), Thermal (EDM, EBM, LBM, PAM, IBM), Electrochemical (ECM), Chemical (Chemical milling).</p>
+        <p><strong>Non-Traditional Machining (NTM)</strong> processes are those that do not use a hard cutting tool in direct contact with the workpiece. They use other forms of energy to remove material — electrical, chemical, thermal, or abrasive-jet.</p>
+        <p><strong>Classification by Energy Source:</strong></p>
+        <table class="info-table">
+          <tr><th>Energy Type</th><th>Processes</th></tr>
+          <tr><td>Mechanical</td><td>USM (Ultrasonic), AJM (Abrasive Jet), WJM (Water Jet)</td></tr>
+          <tr><td>Thermal / Electrical</td><td>EDM (Electric Discharge), EBM (Electron Beam), LBM (Laser Beam), PAM (Plasma Arc), IBM (Ion Beam)</td></tr>
+          <tr><td>Electrochemical</td><td>ECM (Electro Chemical Machining)</td></tr>
+          <tr><td>Chemical</td><td>Chemical Milling, Photochemical Machining</td></tr>
+        </table>
+        <p><strong>Need for NTM:</strong> To machine hard alloys, ceramics, brittle/thin materials; create complex shapes; achieve zero tool wear; no thermal damage in sensitive components.</p>
       </div></details>
     </div>
 
@@ -599,7 +748,26 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.d)</span><span class="pyq-q">Write short note on Plasma Arc Machining.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>PAM section</strong> above. Key points: ionized gas at 28,000°C, DC power supply, constricted arc in plasma torch, used for cutting hard materials like stainless steel and titanium.</p>
+        <h4>Plasma Arc Machining (PAM)</h4>
+        <p><strong>Principle:</strong> A gas (argon, nitrogen, or mixture) is forced through a small constricted nozzle and an electric arc is struck through it. The arc ionizes the gas to form <em>plasma</em> — a state of matter at temperatures of <strong>16,000–28,000°C</strong>. This extremely hot plasma jet is directed at the workpiece, melting and vaporizing the material.</p>
+
+        <p><strong>Setup Components:</strong></p>
+        <ul>
+          <li>DC power supply (200–400 V, 50–300 A)</li>
+          <li>Plasma torch with tungsten electrode (cathode)</li>
+          <li>Constricting nozzle (copper, water-cooled)</li>
+          <li>Gas supply — argon, nitrogen, H₂, or mixtures</li>
+          <li>Workpiece as anode (in transferred arc mode)</li>
+        </ul>
+
+        <p><strong>Types:</strong></p>
+        <ul>
+          <li><em>Transferred arc</em>: arc between electrode and workpiece — high energy, used for cutting</li>
+          <li><em>Non-transferred arc</em>: arc within the torch — used for coating/spraying</li>
+        </ul>
+
+        <p><strong>Applications:</strong> Cutting stainless steel, aluminium, titanium, Inconel; aerospace component profiling; removing hard coatings.</p>
+        <p><strong>Limitations:</strong> Large HAZ (heat affected zone); not suitable for precision parts; requires shielding due to UV radiation and fumes.</p>
       </div></details>
     </div>
 
@@ -607,7 +775,75 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (IV)</span><span class="pyq-q">With neat sketches explain the EDM process and its process parameters. What are the applications of EDM?</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>EDM section</strong> above. Include EDM setup diagram. Cover: dielectric fluid role, spark generator, process parameters table (current, pulse time, voltage, polarity), and applications (die sinking, micro-drilling, wire EDM).</p>
+        <h4>Electric Discharge Machining (EDM)</h4>
+        <p><strong>Principle:</strong> EDM removes metal by controlled electrical sparks between the tool electrode and the workpiece, both submerged in a dielectric fluid. Each spark produces a temperature of 8,000–12,000°C locally, melting and vaporizing a tiny crater of material. Thousands of sparks per second result in measurable material removal.</p>
+
+        <svg viewBox="0 0 500 230" class="diagram-svg" aria-label="EDM Setup">
+          <rect x="0" y="0" width="500" height="230" fill="var(--bg-card)" rx="8"/>
+          <!-- Power supply -->
+          <rect x="180" y="8" width="140" height="38" rx="5" fill="#6366f1" opacity="0.8"/>
+          <text x="250" y="32" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Pulse Generator</text>
+          <!-- Wires -->
+          <line x1="200" y1="46" x2="150" y2="80" stroke="#ef4444" stroke-width="2"/>
+          <text x="155" y="73" fill="#ef4444" font-size="11">+ Workpiece</text>
+          <line x1="300" y1="46" x2="340" y2="80" stroke="blue" stroke-width="2"/>
+          <text x="310" y="73" fill="blue" font-size="11">− Tool</text>
+          <!-- Dielectric tank -->
+          <rect x="80" y="100" width="340" height="110" rx="6" fill="#38bdf8" opacity="0.15" stroke="#38bdf8" stroke-width="1.5"/>
+          <text x="90" y="120" fill="#0284c7" font-size="11">Dielectric fluid (kerosene / deionized water)</text>
+          <!-- Tool electrode -->
+          <rect x="215" y="80" width="70" height="70" rx="3" fill="#94a3b8"/>
+          <text x="250" y="120" text-anchor="middle" fill="white" font-size="12">Tool</text>
+          <!-- Spark gap -->
+          <line x1="215" y1="155" x2="215" y2="165" stroke="yellow" stroke-width="1" stroke-dasharray="3"/>
+          <line x1="285" y1="155" x2="285" y2="165" stroke="yellow" stroke-width="1" stroke-dasharray="3"/>
+          <!-- Workpiece -->
+          <rect x="80" y="165" width="340" height="40" rx="3" fill="#f97316" opacity="0.6"/>
+          <text x="250" y="190" text-anchor="middle" fill="white" font-size="12">Workpiece (Anode +)</text>
+          <!-- Spark symbol -->
+          <text x="248" y="162" fill="yellow" font-size="16" font-weight="bold">⚡</text>
+          <text x="300" y="155" fill="#fcd34d" font-size="10">Spark gap 0.01–0.5 mm</text>
+        </svg>
+
+        <h4>Process Steps:</h4>
+        <ol>
+          <li>Tool (cathode) and workpiece (anode) are separated by a small gap (0.01–0.5 mm) in dielectric fluid</li>
+          <li>Pulse generator applies high-frequency voltage pulses (DC, 50–300 V)</li>
+          <li>Electric field ionizes the dielectric, forming a plasma channel</li>
+          <li>A spark discharges — temperature reaches 8,000–12,000°C at the spark location</li>
+          <li>Material melts and vaporizes; the molten material is flushed away by dielectric flow</li>
+          <li>The dielectric de-ionizes between pulses (off-time), allowing the next spark to occur at the next closest point</li>
+          <li>Tool is servo-fed to maintain constant gap as workpiece erodes</li>
+        </ol>
+
+        <h4>Process Parameters in EDM:</h4>
+        <table class="info-table">
+          <tr><th>Parameter</th><th>Range</th><th>Effect on MRR / Finish</th></tr>
+          <tr><td>Peak current (I)</td><td>1–500 A</td><td>↑ current → ↑ MRR, ↑ roughness</td></tr>
+          <tr><td>Pulse on-time (Ton)</td><td>1–2000 μs</td><td>↑ Ton → ↑ crater size → ↑ MRR, ↑ roughness</td></tr>
+          <tr><td>Pulse off-time (Toff)</td><td>5–100 μs</td><td>Must allow deionization; too short = arcing</td></tr>
+          <tr><td>Open circuit voltage</td><td>50–300 V DC</td><td>Higher voltage → wider gap → less precision</td></tr>
+          <tr><td>Polarity</td><td>Normal / Reversed</td><td>Normal: workpiece (+); Reversed: tool (+) for finishing</td></tr>
+          <tr><td>Electrode material</td><td>Copper, graphite, brass</td><td>Graphite: high MRR; Copper: better surface finish</td></tr>
+          <tr><td>Dielectric fluid</td><td>Kerosene, EDM oil, deionized water</td><td>Controls spark intensity, flushes debris</td></tr>
+        </table>
+
+        <h4>Role of Dielectric Fluid:</h4>
+        <ul>
+          <li>Acts as insulator between pulses (prevents continuous arcing)</li>
+          <li>Ionizes quickly during spark to form plasma channel</li>
+          <li>Cools the workpiece and tool after each spark</li>
+          <li>Flushes eroded particles out of the gap</li>
+        </ul>
+
+        <h4>Applications of EDM:</h4>
+        <ul>
+          <li><strong>Die sinking:</strong> forging dies, injection moulds, stamping dies</li>
+          <li><strong>Wire EDM:</strong> cutting complex 2D profiles (CNC wire cutting)</li>
+          <li><strong>Micro-drilling:</strong> small holes (&lt;0.1 mm) in turbine blades</li>
+          <li><strong>Hard steel machining:</strong> after heat treatment — hardened tool steels</li>
+          <li><strong>Aerospace:</strong> superalloy components (Inconel, titanium)</li>
+        </ul>
       </div></details>
     </div>
 
@@ -615,7 +851,76 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (V)</span><span class="pyq-q">Describe the working principle of Abrasive Jet Machining with neat diagrams. What are the factors influencing MRR in AJM?</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO2</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>AJM section</strong> above. Include AJM system diagram. Explain brittle fracture mechanism. List all factors from the MRR table: abrasive type/size/flow rate, gas pressure, stand-off distance, workpiece material.</p>
+        <h4>Abrasive Jet Machining (AJM)</h4>
+        <p><strong>Principle:</strong> AJM removes material by the erosive action of a high-velocity stream of abrasive particles (Al₂O₃ or SiC, 10–50 μm) carried by a high-pressure gas jet (air, N₂, or CO₂ at 0.2–1.0 N/mm²). The jet is directed at the workpiece through a nozzle. Upon impact, the abrasive grains cut micro-chips from the workpiece surface — a mechanism of brittle fracture and micro-cutting.</p>
+
+        <svg viewBox="0 0 500 200" class="diagram-svg" aria-label="AJM System">
+          <rect x="0" y="0" width="500" height="200" fill="var(--bg-card)" rx="8"/>
+          <!-- Gas cylinder -->
+          <rect x="10" y="60" width="50" height="80" rx="20" fill="#94a3b8" opacity="0.7"/>
+          <text x="35" y="105" text-anchor="middle" fill="white" font-size="10">Gas</text>
+          <!-- Filter -->
+          <rect x="75" y="80" width="40" height="40" rx="3" fill="#6366f1" opacity="0.6"/>
+          <text x="95" y="103" text-anchor="middle" fill="white" font-size="9">Filter</text>
+          <!-- Pressure regulator -->
+          <rect x="130" y="80" width="45" height="40" rx="3" fill="#f97316" opacity="0.6"/>
+          <text x="152" y="97" text-anchor="middle" fill="white" font-size="9">Pressure</text>
+          <text x="152" y="110" text-anchor="middle" fill="white" font-size="9">Regulator</text>
+          <!-- Mixing chamber -->
+          <rect x="195" y="70" width="70" height="60" rx="5" fill="#22c55e" opacity="0.6"/>
+          <text x="230" y="100" text-anchor="middle" fill="white" font-size="10">Mixing</text>
+          <text x="230" y="113" text-anchor="middle" fill="white" font-size="10">Chamber</text>
+          <!-- Abrasive hopper -->
+          <polygon points="215,20 270,20 260,70 225,70" fill="#fcd34d" opacity="0.8"/>
+          <text x="242" y="48" text-anchor="middle" fill="#92400e" font-size="9">Abrasive</text>
+          <text x="242" y="60" text-anchor="middle" fill="#92400e" font-size="9">Hopper</text>
+          <!-- Nozzle -->
+          <polygon points="265,85 310,92 310,108 265,115" fill="#94a3b8"/>
+          <text x="290" y="104" text-anchor="middle" fill="white" font-size="10">Nozzle</text>
+          <!-- Jet -->
+          <line x1="310" y1="100" x2="380" y2="100" stroke="#f97316" stroke-width="3" stroke-dasharray="5"/>
+          <!-- Workpiece -->
+          <rect x="380" y="75" width="80" height="50" rx="4" fill="#6366f1" opacity="0.6"/>
+          <text x="420" y="105" text-anchor="middle" fill="white" font-size="12">Work</text>
+          <!-- Stand-off distance -->
+          <line x1="310" y1="130" x2="380" y2="130" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="345" y="145" text-anchor="middle" fill="#ef4444" font-size="10">Stand-off distance</text>
+          <!-- Flow arrows -->
+          <line x1="60" y1="100" x2="74" y2="100" stroke="#0284c7" stroke-width="2" marker-end="url(#arr3)"/>
+          <line x1="115" y1="100" x2="129" y2="100" stroke="#0284c7" stroke-width="2" marker-end="url(#arr3)"/>
+          <line x1="175" y1="100" x2="194" y2="100" stroke="#0284c7" stroke-width="2" marker-end="url(#arr3)"/>
+          <defs><marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0284c7"/></marker></defs>
+        </svg>
+
+        <h4>Factors Influencing MRR in AJM:</h4>
+        <table class="info-table">
+          <tr><th>Factor</th><th>Effect on MRR</th></tr>
+          <tr><td>Abrasive type</td><td>Harder abrasive (B₄C &gt; Al₂O₃ &gt; SiC) → higher MRR</td></tr>
+          <tr><td>Abrasive grain size</td><td>Larger grains → higher MRR but rougher surface (optimal: 25 μm)</td></tr>
+          <tr><td>Abrasive flow rate (mass flow rate)</td><td>↑ flow rate → ↑ MRR (up to saturation limit)</td></tr>
+          <tr><td>Gas pressure</td><td>↑ pressure → ↑ velocity → ↑ MRR (optimal: 0.5–0.8 N/mm²)</td></tr>
+          <tr><td>Gas type</td><td>CO₂ or N₂ preferred; air causes moisture issues</td></tr>
+          <tr><td>Stand-off distance (SOD)</td><td>Optimal SOD (0.5–5 mm) maximizes MRR; beyond optimal → dispersion reduces MRR</td></tr>
+          <tr><td>Nozzle material</td><td>Tungsten carbide or sapphire — hardness reduces nozzle wear</td></tr>
+          <tr><td>Nozzle geometry</td><td>Circular nozzle for drilling; rectangular for slotting</td></tr>
+          <tr><td>Angle of impingement</td><td>90° for brittle materials gives maximum MRR; lower angles for ductile</td></tr>
+          <tr><td>Workpiece hardness</td><td>Brittle, hard ceramics machine well; ductile metals have lower MRR (material smears)</td></tr>
+        </table>
+
+        <h4>MRR Model (Finnie's equation for brittle materials):</h4>
+        <div class="formula-box">
+          MRR ∝ (v² · d³ · ρ_a) / H_w<br><br>
+          where: v = abrasive velocity, d = grain diameter,<br>
+          ρ_a = abrasive density, H_w = workpiece hardness
+        </div>
+
+        <h4>Applications of AJM:</h4>
+        <ul>
+          <li>Cutting, drilling, deburring of brittle materials (glass, ceramics)</li>
+          <li>Frosting/etching of glass and silicon wafers</li>
+          <li>Cleaning hard-to-reach surfaces</li>
+          <li>Trimming of thin resistor films in electronics</li>
+        </ul>
       </div></details>
     </div>
   </section>

@@ -549,7 +549,37 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part A (I.g)</span><span class="pyq-q">Draw the symbols used to represent flow control valve in hydraulic circuits.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L1</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>Flow control valve (restrictor) symbol: a rectangle with a diagonal arrow through it (indicating adjustability). Restrictor with check valve has an additional check valve symbol in parallel allowing free flow one way. See JIC symbols diagram above.</p>
+        <p><strong>JIC Symbols for Flow Control Valves:</strong></p>
+        <svg viewBox="0 0 420 120" class="diagram-svg" aria-label="Flow control valve symbols">
+          <rect x="0" y="0" width="420" height="120" fill="var(--bg-card)" rx="8"/>
+          <!-- Fixed restrictor -->
+          <line x1="30" y1="55" x2="70" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <rect x="70" y="40" width="40" height="30" rx="2" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <line x1="110" y1="55" x2="150" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <line x1="74" y1="68" x2="106" y2="42" stroke="var(--text)" stroke-width="2"/>
+          <text x="90" y="90" text-anchor="middle" fill="var(--text-muted)" font-size="11">Fixed restrictor</text>
+          <!-- Adjustable flow control -->
+          <line x1="175" y1="55" x2="215" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <rect x="215" y="40" width="40" height="30" rx="2" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <line x1="255" y1="55" x2="295" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <line x1="219" y1="68" x2="251" y2="42" stroke="var(--text)" stroke-width="2"/>
+          <line x1="225" y1="78" x2="253" y2="38" stroke="var(--text)" stroke-width="1.5" marker-end="url(#fca)"/>
+          <defs><marker id="fca" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 Z" fill="var(--text)"/></marker></defs>
+          <text x="235" y="103" text-anchor="middle" fill="var(--text-muted)" font-size="11">Adjustable FCV</text>
+          <!-- Check valve -->
+          <line x1="320" y1="55" x2="345" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <polygon points="345,42 345,68 363,55" fill="var(--text)" opacity="0.6"/>
+          <line x1="363" y1="42" x2="363" y2="68" stroke="var(--text)" stroke-width="2"/>
+          <line x1="363" y1="55" x2="395" y2="55" stroke="var(--text)" stroke-width="2"/>
+          <text x="360" y="90" text-anchor="middle" fill="var(--text-muted)" font-size="11">Check valve</text>
+        </svg>
+        <ul>
+          <li><strong>Fixed restrictor:</strong> Rectangle with diagonal line — creates fixed flow restriction; used where flow rate is preset</li>
+          <li><strong>Adjustable FCV:</strong> Rectangle with diagonal line plus arrow through it — arrow indicates variable setting; used for variable cylinder speed control</li>
+          <li><strong>Check valve:</strong> Triangle pointing in flow direction with a bar — allows free flow one way only; blocks reverse flow</li>
+          <li><strong>FCV with check valve:</strong> The adjustable restrictor in parallel with a check valve — restricts flow in one direction (metering), free flow in reverse (rapid return)</li>
+        </ul>
+        <p><strong>Application:</strong> FCV is used in drilling, grinding, and shaper machine circuits to control the cylinder feed rate by restricting oil flow.</p>
       </div></details>
     </div>
 
@@ -571,8 +601,62 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (VIII)</span><span class="pyq-q">150 components (50 mm dia × 20 mm + 20 mm dia × 100 mm) made by upsetting a 20mm bar. Calculate net weight, gross weight, and length of bar required. Density = 7.86 g/cc.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Solved Problem 2</strong> above for complete step-by-step solution.</p>
-        <p><strong>Answers:</strong> Net weight per component = 0.556 kg, Total net weight = 83.4 kg, Length of bar per component = 225 mm.</p>
+        <h4>Given:</h4>
+        <ul>
+          <li>Component: flange disc (50 mm dia × 20 mm) + stem (20 mm dia × 100 mm)</li>
+          <li>Manufactured by upsetting from a 20 mm diameter bar</li>
+          <li>Number of components: 150</li>
+          <li>Density of steel: 7.86 g/cm³</li>
+        </ul>
+
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Volume of flange portion (disc):</strong><br>
+          V₁ = (π/4) × D² × L = (π/4) × 50² × 20<br>
+          V₁ = 0.7854 × 2500 × 20 = 39,270 mm³
+        </div></div>
+
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Volume of stem portion:</strong><br>
+          V₂ = (π/4) × d² × L = (π/4) × 20² × 100<br>
+          V₂ = 0.7854 × 400 × 100 = 31,416 mm³
+        </div></div>
+
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Net volume per component:</strong><br>
+          V_net = V₁ + V₂ = 39,270 + 31,416 = 70,686 mm³<br>
+          = 70.686 cm³
+        </div></div>
+
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Net weight per component:</strong><br>
+          W_net = V_net × ρ = 70.686 × 7.86 g = 555.6 g<br>
+          <strong>W_net = 0.556 kg per component</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Total net weight for 150 components:</strong><br>
+          = 0.556 × 150 = <strong>83.4 kg</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">6</span><div>
+          <strong>Length of 20 mm bar per component (volume conservation):</strong><br>
+          Volume of bar = V_net (no material loss assumed in forging)<br>
+          (π/4) × 20² × L = 70,686<br>
+          314.16 × L = 70,686<br>
+          L = 70,686 / 314.16 = <strong>225 mm</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">7</span><div>
+          <strong>Total bar length for 150 components:</strong><br>
+          L_total = 225 × 150 = <strong>33,750 mm = 33.75 m</strong>
+        </div></div>
+
+        <h4>Summary:</h4>
+        <table class="info-table">
+          <tr><th>Parameter</th><th>Per Component</th><th>150 Components</th></tr>
+          <tr><td>Net weight</td><td>0.556 kg</td><td>83.4 kg</td></tr>
+          <tr><td>Bar length</td><td>225 mm</td><td>33.75 m</td></tr>
+        </table>
       </div></details>
     </div>
 
@@ -580,7 +664,76 @@
       <div class="pyq-header"><span class="pyq-num">Apr 2024 · Part B (IX)</span><span class="pyq-q">Explain Hydraulic drilling machine with a neat circuit diagram.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Drilling Machine Circuit</strong> section above. Draw circuit with: pump → relief valve → 4/3 DCV → flow control valve → hydraulic motor (for spindle) + feed cylinder. Explain working: motor drives spindle, flow control valve sets feed rate, DCV controls drill advance and retract.</p>
+        <h4>Hydraulic Circuit of Drilling Machine</h4>
+        <p>In a hydraulic drilling machine, the spindle rotation is driven by a hydraulic motor, and the feed (downward movement of the drill head) is controlled by a hydraulic cylinder with a flow control valve. Three operational phases: rapid approach → controlled feed (cutting) → rapid return.</p>
+
+        <svg viewBox="0 0 480 270" class="diagram-svg" aria-label="Hydraulic Drilling Circuit">
+          <rect x="0" y="0" width="480" height="270" fill="var(--bg-card)" rx="8"/>
+          <!-- Tank -->
+          <rect x="15" y="225" width="55" height="30" fill="#38bdf8" opacity="0.35" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="42" y="245" text-anchor="middle" fill="#0284c7" font-size="11">Tank</text>
+          <!-- Pump -->
+          <circle cx="110" cy="240" r="18" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <text x="110" y="244" text-anchor="middle" fill="var(--text)" font-size="10">Pump</text>
+          <line x1="70" y1="240" x2="92" y2="240" stroke="var(--text)" stroke-width="2"/>
+          <line x1="128" y1="240" x2="155" y2="240" stroke="var(--text)" stroke-width="2"/>
+          <!-- Relief valve -->
+          <rect x="155" y="228" width="30" height="24" rx="3" fill="#ef4444" opacity="0.5" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="170" y="243" text-anchor="middle" fill="white" font-size="9">RV</text>
+          <line x1="185" y1="240" x2="220" y2="240" stroke="var(--text)" stroke-width="2"/>
+          <!-- 4/3 DCV -->
+          <rect x="220" y="222" width="90" height="36" rx="4" fill="#6366f1" opacity="0.5" stroke="#6366f1" stroke-width="2"/>
+          <text x="265" y="243" text-anchor="middle" fill="white" font-size="11">4/3 DCV</text>
+          <!-- Return line -->
+          <line x1="265" y1="258" x2="265" y2="268" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <line x1="42" y1="268" x2="265" y2="268" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <line x1="42" y1="255" x2="42" y2="268" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <!-- Line from DCV -->
+          <line x1="310" y1="240" x2="345" y2="240" stroke="var(--text)" stroke-width="2"/>
+          <!-- Flow control valve -->
+          <rect x="345" y="228" width="35" height="24" rx="3" fill="#22c55e" opacity="0.5" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="362" y="243" text-anchor="middle" fill="white" font-size="9">FCV</text>
+          <!-- Line to feed cylinder -->
+          <line x1="380" y1="240" x2="420" y2="240" stroke="var(--text)" stroke-width="2"/>
+          <line x1="420" y1="240" x2="420" y2="185" stroke="var(--text)" stroke-width="2"/>
+          <!-- Feed Cylinder -->
+          <rect x="390" y="85" width="65" height="100" rx="5" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <rect x="388" y="150" width="69" height="12" fill="#f97316" opacity="0.7"/>
+          <line x1="455" y1="156" x2="480" y2="156" stroke="#f97316" stroke-width="4"/>
+          <text x="422" y="103" text-anchor="middle" fill="#f97316" font-size="10">Feed Cyl.</text>
+          <text x="463" y="150" fill="#f97316" font-size="9">Ram</text>
+          <!-- Hydraulic Motor for spindle -->
+          <circle cx="200" cy="140" r="24" fill="none" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="200" y="137" text-anchor="middle" fill="#8b5cf6" font-size="9">Hydraulic</text>
+          <text x="200" y="150" text-anchor="middle" fill="#8b5cf6" font-size="9">Motor</text>
+          <text x="200" y="163" text-anchor="middle" fill="#8b5cf6" font-size="8">(Spindle)</text>
+          <!-- Motor connection -->
+          <line x1="265" y1="222" x2="265" y2="164" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5"/>
+          <line x1="224" y1="140" x2="265" y2="140" stroke="#8b5cf6" stroke-width="1.5"/>
+          <line x1="265" y1="140" x2="265" y2="164" stroke="#8b5cf6" stroke-width="1.5"/>
+          <!-- Labels -->
+          <text x="345" y="218" fill="#22c55e" font-size="9">Adjustable</text>
+          <text x="170" y="218" fill="#ef4444" font-size="9">Overload</text>
+        </svg>
+
+        <h4>Circuit Components:</h4>
+        <ol>
+          <li><strong>Tank:</strong> Hydraulic oil reservoir</li>
+          <li><strong>Pump:</strong> Fixed displacement gear pump driven by electric motor</li>
+          <li><strong>Relief Valve (RV):</strong> System pressure protection (typically 10–15 MPa)</li>
+          <li><strong>4/3 Directional Control Valve (DCV):</strong> 4-port 3-position spring-centered valve; controls advance, dwell, and retract</li>
+          <li><strong>Flow Control Valve (FCV):</strong> Adjustable restrictor; controls drill feed rate</li>
+          <li><strong>Feed Cylinder:</strong> Double-acting cylinder; moves spindle head up/down</li>
+          <li><strong>Hydraulic Motor:</strong> Drives drill spindle rotation at required speed</li>
+        </ol>
+
+        <h4>Working Phases:</h4>
+        <ul>
+          <li><strong>Rapid approach:</strong> DCV energised — oil flows freely through check valve (bypassing FCV) to cylinder top → drill head advances quickly to workpiece surface</li>
+          <li><strong>Feed/Drilling:</strong> As drill contacts work, feed circuit activates — FCV restricts oil flow → cylinder advances at slow, controlled feed rate for proper cutting</li>
+          <li><strong>Dwell:</strong> DCV in centre (blocked) position — cylinder stops; spindle motor continues for fine finishing</li>
+          <li><strong>Retract:</strong> DCV reversed — oil to rod side of cylinder; drill head retracts rapidly; return oil from bore side flows back to tank</li>
+        </ul>
       </div></details>
     </div>
 
@@ -588,7 +741,22 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part A (I.g)</span><span class="pyq-q">Differentiate between cutaway circuit diagrams and schematic circuit diagrams. Why are schematic circuit diagrams preferred for hydraulic circuits?</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">3 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See the <strong>Cutaway vs. Schematic comparison table</strong> under Hydraulics Introduction. Schematic preferred because: standardized JIC symbols make circuit readable by all engineers, easily shows fluid flow paths, simpler to draw, easier to troubleshoot and modify.</p>
+        <table class="info-table">
+          <tr><th>Feature</th><th>Cutaway Diagram</th><th>Schematic Diagram</th></tr>
+          <tr><td>Representation</td><td>Shows internal cross-section of components</td><td>Uses standardized symbols (JIC/ISO)</td></tr>
+          <tr><td>Detail level</td><td>Very detailed — ports, spools, seals visible</td><td>Simple functional representation only</td></tr>
+          <tr><td>Circuit readability</td><td>Complex; difficult to trace fluid paths</td><td>Easy to follow fluid flow</td></tr>
+          <tr><td>Universality</td><td>Non-standard; varies by manufacturer</td><td>Internationally standardized (JIC)</td></tr>
+          <tr><td>Primary use</td><td>Maintenance manuals, part identification</td><td>Circuit design and troubleshooting</td></tr>
+        </table>
+        <p><strong>Why schematic is preferred:</strong></p>
+        <ul>
+          <li>JIC symbols are standardized internationally — understood by all hydraulic engineers</li>
+          <li>Fluid flow paths clearly traceable from pump to actuator to tank</li>
+          <li>Much simpler to draw — no detailed internal construction required</li>
+          <li>Easy to modify circuit design without redrawing component internals</li>
+          <li>Troubleshooting is faster — symbolic connections highlight faults</li>
+        </ul>
       </div></details>
     </div>
 
@@ -604,7 +772,86 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (VIII)</span><span class="pyq-q">Explain with a numerical example how estimation and costing is done in a foundry shop.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L3</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Foundry Cost section and Solved Problem 1</strong> above. Include the cost estimation formula chain: net weight → gross weight → material cost → labour cost → overheads → total cost. Present a complete worked numerical example.</p>
+        <h4>Foundry Shop — Cost Estimation Framework</h4>
+        <p>A foundry casting cost estimate must account for all cost sections from pattern to finished casting:</p>
+        <ol>
+          <li>Pattern section (pattern making / amortization)</li>
+          <li>Sand section (moulding sand preparation)</li>
+          <li>Core section (core making if required)</li>
+          <li>Mould section (mould preparation, pouring)</li>
+          <li>Melting section (metal melting and pouring)</li>
+          <li>Fettling section (cleaning, grinding, shot blasting)</li>
+        </ol>
+
+        <div class="formula-box">
+          Gross weight = Net weight × (1 + gate/riser allowance ratio)<br>
+          Material cost = Gross weight × material rate (₹/kg)<br>
+          Labour cost = Time per casting × labour rate (₹/hr)<br>
+          Prime cost = Material cost + Labour cost<br>
+          Overhead = Prime cost × overhead rate (%)<br>
+          Factory cost = Prime cost + Overhead<br>
+          Selling price = Factory cost × (1 + profit %)
+        </div>
+
+        <h4>Numerical Example:</h4>
+        <p><strong>Data:</strong> Produce 100 CI castings. Net weight = 5 kg. Gate/riser allowance = 20%. CI rate = ₹45/kg. Labour rate = ₹80/hr. Moulding time = 1.5 hr/casting. Overhead = 80% on prime cost. Profit = 10%.</p>
+
+        <div class="step"><span class="step-num">1</span><div>
+          <strong>Gross weight per casting:</strong><br>
+          = 5 × 1.20 = <strong>6.0 kg</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">2</span><div>
+          <strong>Material cost:</strong><br>
+          = 6.0 × ₹45 = <strong>₹270</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">3</span><div>
+          <strong>Labour cost:</strong><br>
+          = 1.5 hr × ₹80 = <strong>₹120</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">4</span><div>
+          <strong>Prime cost:</strong><br>
+          = ₹270 + ₹120 = <strong>₹390</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">5</span><div>
+          <strong>Overhead (80% on prime cost):</strong><br>
+          = 0.80 × ₹390 = <strong>₹312</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">6</span><div>
+          <strong>Factory cost:</strong><br>
+          = ₹390 + ₹312 = <strong>₹702</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">7</span><div>
+          <strong>Profit (10%):</strong><br>
+          = 0.10 × ₹702 = <strong>₹70.2</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">8</span><div>
+          <strong>Selling price per casting:</strong><br>
+          = ₹702 + ₹70.2 = <strong>₹772.20</strong>
+        </div></div>
+
+        <div class="step"><span class="step-num">9</span><div>
+          <strong>Total cost for 100 castings:</strong><br>
+          Factory cost = ₹702 × 100 = <strong>₹70,200</strong><br>
+          Selling price = ₹772.20 × 100 = <strong>₹77,220</strong>
+        </div></div>
+
+        <table class="info-table">
+          <tr><th>Component</th><th>Per Casting</th><th>100 Castings</th></tr>
+          <tr><td>Material</td><td>₹270</td><td>₹27,000</td></tr>
+          <tr><td>Labour</td><td>₹120</td><td>₹12,000</td></tr>
+          <tr><td>Prime cost</td><td>₹390</td><td>₹39,000</td></tr>
+          <tr><td>Overhead</td><td>₹312</td><td>₹31,200</td></tr>
+          <tr><td>Factory cost</td><td>₹702</td><td>₹70,200</td></tr>
+          <tr><td>Profit</td><td>₹70.2</td><td>₹7,020</td></tr>
+          <tr><td><strong>Selling price</strong></td><td><strong>₹772.2</strong></td><td><strong>₹77,220</strong></td></tr>
+        </table>
       </div></details>
     </div>
 
@@ -612,7 +859,89 @@
       <div class="pyq-header"><span class="pyq-num">Sep 2024 · Part B (IX)</span><span class="pyq-q">Draw a neat circuit diagram and explain the working of hydraulic circuit of shaper machine.</span></div>
       <div class="pyq-meta"><span class="pyq-tag tag-marks">12 marks</span><span class="pyq-tag tag-co">CO4</span><span class="pyq-tag tag-mod">L2</span></div>
       <details class="accordion"><summary>View Answer</summary><div class="accordion-body">
-        <p>See <strong>Shaper Machine Circuit section</strong> above. Reproduce the diagram and explain: pump → relief valve → 4/3 DCV → double-acting cylinder. Forward stroke (cutting): oil to right (full bore) side, piston moves left. Return stroke: oil to rod side, piston moves right. Quick return due to smaller rod-side area — automatic speed difference.</p>
+        <h4>Hydraulic Circuit of Shaper Machine</h4>
+        <p>A shaper machine hydraulic circuit drives a double-acting cylinder that moves the ram (tool holder) back and forth. The fundamental requirement is <strong>slow cutting stroke + fast return stroke (quick return)</strong>. This is achieved automatically by the difference in effective piston areas between bore side and rod side.</p>
+
+        <svg viewBox="0 0 520 240" class="diagram-svg" aria-label="Shaper Machine Hydraulic Circuit">
+          <rect x="0" y="0" width="520" height="240" fill="var(--bg-card)" rx="8"/>
+          <!-- Tank -->
+          <rect x="10" y="195" width="55" height="30" fill="#38bdf8" opacity="0.35" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="37" y="215" text-anchor="middle" fill="#0284c7" font-size="11">Tank</text>
+          <!-- Pump -->
+          <circle cx="105" cy="210" r="17" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <text x="105" y="214" text-anchor="middle" fill="var(--text)" font-size="10">Pump</text>
+          <line x1="65" y1="210" x2="88" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <line x1="122" y1="210" x2="152" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <!-- Relief valve -->
+          <rect x="152" y="198" width="28" height="24" rx="3" fill="#ef4444" opacity="0.5" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="166" y="213" text-anchor="middle" fill="white" font-size="9">RV</text>
+          <line x1="180" y1="210" x2="215" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <!-- 4/3 DCV -->
+          <rect x="215" y="193" width="95" height="34" rx="4" fill="#6366f1" opacity="0.5" stroke="#6366f1" stroke-width="2"/>
+          <text x="262" y="214" text-anchor="middle" fill="white" font-size="11">4/3 DCV</text>
+          <!-- Return to tank -->
+          <line x1="262" y1="227" x2="262" y2="235" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <line x1="37" y1="235" x2="262" y2="235" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <line x1="37" y1="225" x2="37" y2="235" stroke="var(--text)" stroke-width="1.5" stroke-dasharray="4"/>
+          <!-- Flow control valve (cutting side) -->
+          <line x1="310" y1="210" x2="345" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <rect x="345" y="198" width="35" height="24" rx="3" fill="#22c55e" opacity="0.5" stroke="#22c55e" stroke-width="1.5"/>
+          <text x="362" y="213" text-anchor="middle" fill="white" font-size="9">FCV</text>
+          <!-- Line to bore side of cylinder -->
+          <line x1="380" y1="210" x2="415" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <line x1="415" y1="210" x2="415" y2="145" stroke="var(--text)" stroke-width="2"/>
+          <!-- Cylinder body -->
+          <rect x="390" y="60" width="110" height="85" rx="5" fill="none" stroke="var(--text)" stroke-width="2"/>
+          <!-- Piston -->
+          <rect x="388" y="115" width="114" height="12" fill="#94a3b8" opacity="0.8"/>
+          <!-- Piston rod -->
+          <line x1="500" y1="121" x2="520" y2="121" stroke="#94a3b8" stroke-width="5"/>
+          <text x="505" y="113" fill="#f97316" font-size="10">Ram/</text>
+          <text x="505" y="125" fill="#f97316" font-size="10">Tool</text>
+          <!-- Labels inside cylinder -->
+          <text x="440" y="95" text-anchor="middle" fill="var(--text-muted)" font-size="9">Bore side (A)</text>
+          <text x="440" y="155" text-anchor="middle" fill="var(--text-muted)" font-size="9">Rod side (A−a)</text>
+          <!-- Line from DCV to rod side -->
+          <line x1="215" y1="210" x2="195" y2="210" stroke="var(--text)" stroke-width="2"/>
+          <line x1="195" y1="210" x2="195" y2="130" stroke="var(--text)" stroke-width="2"/>
+          <line x1="195" y1="130" x2="390" y2="130" stroke="var(--text)" stroke-width="2"/>
+          <!-- Direction arrows -->
+          <text x="280" y="55" text-anchor="middle" fill="#22c55e" font-size="10">← Forward (cutting stroke, slow)</text>
+          <text x="280" y="42" text-anchor="middle" fill="#ef4444" font-size="10">Return stroke (fast) →</text>
+        </svg>
+
+        <h4>Circuit Components:</h4>
+        <ol>
+          <li><strong>Pump:</strong> Constant-pressure gear pump (motor-driven)</li>
+          <li><strong>Relief Valve (RV):</strong> Maximum system pressure protection; bypasses oil if cutting force causes overpressure</li>
+          <li><strong>4/3 Directional Control Valve (DCV):</strong> 3-position valve; automatically reversed by trip dogs at end of each stroke</li>
+          <li><strong>Flow Control Valve (FCV):</strong> Adjustable restrictor on bore-side line; controls cutting speed</li>
+          <li><strong>Double-acting Cylinder:</strong> Bore side (full area A) for cutting stroke; rod side (area A−a) for return</li>
+        </ol>
+
+        <h4>Forward (Cutting) Stroke:</h4>
+        <ol>
+          <li>DCV shifts to forward position</li>
+          <li>Oil from pump → FCV → bore side of cylinder (full area side)</li>
+          <li>FCV restricts flow → piston moves slowly at controlled cutting speed</li>
+          <li>Return oil from rod side → DCV → tank</li>
+          <li>Ram moves forward; tool cuts the workpiece</li>
+        </ol>
+
+        <h4>Return Stroke:</h4>
+        <ol>
+          <li>Trip dog at end of cut reverses DCV automatically</li>
+          <li>Oil from pump → rod side of cylinder (area = A − a)</li>
+          <li>Oil bypasses FCV via check valve — unrestricted fast flow</li>
+          <li>Return oil from bore side → DCV → tank</li>
+          <li>Since rod-side area (A−a) &lt; bore area (A), same flow Q gives higher velocity — <strong>quick return</strong></li>
+        </ol>
+
+        <div class="formula-box">
+          Cutting speed v_c = Q / A_bore<br>
+          Return speed v_r = Q / (A_bore − A_rod)<br>
+          Since A_rod > 0 → v_r &gt; v_c → Quick return automatically achieved
+        </div>
       </div></details>
     </div>
   </section>
